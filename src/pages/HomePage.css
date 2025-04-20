@@ -26,6 +26,7 @@
 }
 /* Hero Section Styles */
 .hero-section {
+
   position: relative;
   height: 100vh;
   min-height: 600px;
@@ -37,6 +38,7 @@
   align-items: center;
   text-align: center;
   padding: 20px;
+
 }
 
 /* Why Choose Section */
@@ -45,6 +47,7 @@
   background-color:#d5efd5;
   color: #2c3e50;
   text-align: center;
+
 }
 
 .why-choose-section p {
@@ -58,7 +61,7 @@
 .hero-content {
   position: initial;
   color: black;/* To ensure text stays above the overlay */
-  margin-top: -40px;
+  margin-top: -80px;
   text-align: center; /* Center the "About us" text */
 }
 
@@ -137,7 +140,7 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   margin-left:240px;
-  margin-top: 50px;
+  margin-top: -190px;
 }
 .stats-grid img {
   border-radius: 10px;
