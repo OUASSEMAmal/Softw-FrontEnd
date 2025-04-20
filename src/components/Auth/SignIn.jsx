@@ -1,0 +1,99 @@
+import React, { useState } from 'react';
+import './SingIn.css';
+
+const SignIn = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [rememberMe, setRememberMe] = useState(false);
+  const [error, setError] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setError('');
+
+    // Validation simple
+    if (!email || !password) {
+      setError('Veuillez remplir tous les champs');
+      return;
+    }
+
+    // Ici vous ajouteriez la logique de connexion réelle
+    console.log('Tentative de connexion avec:', { email, password, rememberMe });
+
+    // Simuler une connexion (à remplacer par un appel API réel)
+    // if (email !== 'test@example.com' || password !== 'password123') {
+    //   setError('Email ou mot de passe incorrect');
+    // }
+  };
+
+  return (
+      <div className="signin-container">
+        <div className="signin-card">
+          <h2 className="signin-title">Connexion</h2>
+
+          {error && <div className="error-message">{error}</div>}
+
+          <form onSubmit={handleSubmit} className="signin-form">
+            <div className="form-group">
+              <label htmlFor="email">Email</label>
+              <input
+                  type="email"
+                  id="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Entrez votre email"
+                  autoComplete="username"
+              />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="password">Mot de passe</label>
+              <input
+                  type="password"
+                  id="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="Entrez votre mot de passe"
+                  autoComplete="current-password"
+              />
+            </div>
+
+            <div className="remember-forgot">
+              <label className="remember-me">
+                <input
+                    type="checkbox"
+                    checked={rememberMe}
+                    onChange={(e) => setRememberMe(e.target.checked)}
+                />
+                Se souvenir de moi
+              </label>
+
+              <a href="/forgot-password" className="forgot-password">
+                Mot de passe oublié ?
+              </a>
+            </div>
+
+            <button type="submit" className="signin-button">
+              Se connecter
+            </button>
+          </form>
+
+          <div className="signup-link">
+            Pas encore de compte ? <a href="/signup">S'inscrire</a>
+          </div>
+
+          <div className="social-login">
+            <p>Ou connectez-vous avec :</p>
+            <div className="social-icons">
+              <button className="social-button google">
+                <i className="fab fa-google"></i>
+              </button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+  );
+};
+
+export default SignIn;

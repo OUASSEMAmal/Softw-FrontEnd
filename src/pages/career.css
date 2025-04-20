@@ -1,0 +1,122 @@
+.contact-form-container {
+    max-width: 600px;
+    margin-right: 850px;
+    padding: 30px;
+    background-color: #7397bc;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #555;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"] {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #abbde4;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus {
+    border-color: #4facfe;
+    outline: none;
+}
+
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.hero-content {
+    padding: 90px;
+    margin-bottom: 120px;
+    margin-inside:100px ;
+}
+.radio-group input[type="radio"] {
+    margin: 0;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #4facfe;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #3a8fd4;
+}
+
+@media (max-width: 768px) {}
+.footer-div{
+    height: 230px;
+    margin-top: -200px;
+}
+.footer-div a {
+    color: whitesmoke;
+    text-decoration: none;
+}
+.stars{
+    height: 100%;
+    width: 160px;
+}
+.logo-black{
+    width: 160px;
+    height: 80px;
+    display: block;
+    margin: 20px auto 20px;
+}
+.terms ul{
+    margin-left: -20px;
+    gap: 15rem;
+    margin-bottom: 30px;
+}
+.terms p {
+    font-family: Open Sans, sans-serif;
+}
+.stats-section{
+    background-color: #deeee4;
+    width: 100%;
+    border-radius: 20px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .contact-form-container {
+        padding: 20px;
+    }
+}
