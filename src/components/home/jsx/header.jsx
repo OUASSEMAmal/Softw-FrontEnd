@@ -15,7 +15,7 @@ const header = () => {
                 <li><i className="bi bi-telephone" style={{ color: 'black' }}> </i> <a href="#partners" style={{marginRight:50}}> Contact</a></li>
                 <li><a href="#contact"><i className="bi bi-instagram" style={{ color: 'black' }}> </i></a></li>
                 <li><a href="#contact"><i className="bi bi-facebook" style={{ color: 'black' }}> </i></a></li>
-                <li><a href="#media"><i className="bi bi-linkedin" style={{ color: 'black' }}> </i></a></li>
+                <li><a href="https://www.linkedin.com/company/softwaretich/"><i className="bi bi-linkedin" style={{ color: 'black' }}> </i></a></li>
                 <li><a href="#career"><i className="bi bi-globe" style={{ color: 'black', marginRight:50 }}> </i></a></li>
 
             </ul>

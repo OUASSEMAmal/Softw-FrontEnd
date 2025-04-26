@@ -293,7 +293,9 @@
 @media (max-width: 768px) {}
 .footer-div{
   height: 230px;
- margin-top: -200px;
+  margin-top: 150px;
+
+
 }
 .footer-div a {
   color: whitesmoke;
@@ -327,4 +329,5 @@
   .stats-grid {
     grid-template-columns: 1fr;
   }
+
 }

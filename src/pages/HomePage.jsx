@@ -12,9 +12,11 @@ import Footer from "../components/Footer";
 
 
 const HomePage = () => {
+
   return (
+
     <div className="home-container">
-      {/* Hero Section with Overlaid Header */}
+
       <Header />
       <Navbar />
 

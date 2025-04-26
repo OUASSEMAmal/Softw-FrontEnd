@@ -73,8 +73,7 @@
 
 /* Responsive */
 @media (max-width: 768px) {
-    .hero-header,
-    .another-section {
+    .hero-header {
         flex-direction: column;
         align-items: flex-start;
         gap: 1rem;
@@ -82,6 +81,7 @@
 
     .nav ul {
         flex-direction: column;
+
         gap: 0.6rem;
     }
 
@@ -92,7 +92,7 @@
 
 /* === SECTION 2 : fond noir, texte blanc === */
 .another-overlay {
-    background-color: black;
+    background-color: #0b0101;
     border-radius: 12px;
     padding: 1rem 1.5rem;
 }

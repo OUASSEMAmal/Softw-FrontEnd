@@ -2,6 +2,7 @@ import React from 'react';
 import '../css/navbar.css';
 import logo from '../../../assets/logo.jpg';
 import { Link } from "react-router-dom";
+import {FaLinkedin} from "react-icons/fa";
 
 const Navbar = () => {
     return (
@@ -13,7 +14,7 @@ const Navbar = () => {
                     <nav className="nav">
                         <ul>
                             <li><Link to="/">Home</Link></li>
-                            <li><Link to="/products">Products</Link></li>
+                            <li><Link to="/Products">Products</Link></li>
                             <li><Link to="/partners">Partners</Link></li>
                             <li><Link to ="/Cybersecurity">Cybersecurity</Link></li>
                             <li><Link to ="/Whotrustus">Who trust us ?</Link></li>
@@ -23,6 +24,8 @@ const Navbar = () => {
                         </ul>
                     </nav>
                 </header>
+
+
             </div>
     );
 };
