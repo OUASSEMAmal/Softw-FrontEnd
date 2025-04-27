@@ -1,11 +1,11 @@
 import StarsLeft from "../assets/Footer/stars-left.jpg";
 import StarsRight from "../assets/Footer/stars-right.png";
 import LogoBlack from "../assets/Footer/logo-black.jpg";
+import './Footer.css'
 
-
-const Footer = () => {
+const Footer = ({style }) => {
   return (
-      <footer className="bg-black">
+      <footer className="bg-black" style={style} >
         <div className="footer-div d-flex justify-content-between align-items-center">
           <img src={StarsLeft} alt="stars" className="stars" />
 

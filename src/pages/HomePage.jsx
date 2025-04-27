@@ -89,7 +89,7 @@ const HomePage = () => {
       </main>
 
       {/* Footer */}
-      <Footer />
+      <Footer style={{ marginTop: -320}} />
     </div>
   );
 };

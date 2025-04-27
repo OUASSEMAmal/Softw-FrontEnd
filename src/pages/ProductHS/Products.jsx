@@ -207,7 +207,7 @@ const Products = () => {
                 </div>
             </div>
             <div>
-                <Footer />
+                <Footer style={{ marginTop: 200}} />
             </div>
         </div>
     );

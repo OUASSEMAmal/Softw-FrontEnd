@@ -14,6 +14,27 @@ const Career = () => {
         collaborationType: ''
     });
 
+    const cardsData = [
+        {
+            id: 1,
+            title: 'Why You ?',
+            text: 'Because our success depends on yours! You\'re passionate about cybersecurity,\n' +
+                'data protection is one of your priorities, you\'re looking to develop your skills in a\n' +
+                'stimulating and constantly evolving sector, and you\'re looking for a rich and varied experience...\n' +
+                'many opportunities are available to you at SOFTAWERTICH!',
+            imageUrl: 'https://imgs.search.brave.com/Yq-DB7Tyd4ELbnvnfRVlQ5rgElI0vZFaru19qqGr8p4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS1waG90/by95b3VuZy1naXJs/LXNocnVnZ2luZy1z/aG91bGRlcnMtaS1r/bm93LXdoeS1hcmUt/eW91LXNob3V0aW5n/LW1lXzI2MjI4OC0z/NjM1LmpwZz9zZW10/PWFpc19oeWJyaWQ',
+        },
+        {
+            id: 2,
+            title: 'Why US ?',
+            text: " At  SOFTAWERTICH, employees are valued and empowered. We have much more than a job to offer you:\n" +
+                "A collaborative work environment that promotes diversity and mutual respect,\n" +
+                "Assignments that stimulate your intellectual curiosity,\n" +
+                "The opportunity to grow and flourish in a career with a future",
+            imageUrl: 'https://imgs.search.brave.com/BDCvbjnYJLXvoA58FbapycD3R4RM6XEsoCo8E6DeZJs/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvODI2/NDQxMjY2L3Bob3Rv/L3doeS1jaG9vc2Ut/dXMuanBnP3M9NjEy/eDYxMiZ3PTAmaz0y/MCZjPV9OR0RZUy1l/S2wxQmh0UUdJTXNQ/UGY4d251WlpaVHk0/eFVxdkhZa2JTeXM9'
+        },
+    ];
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData(prev => ({
@@ -29,79 +50,84 @@ const Career = () => {
 
     return (
         <div>
-           <Header />
+            <Header />
             <NavBar />
             <section
                 className="hero-section"
+
                 style={{ backgroundImage: `url(${backgroundImage})` }}
             >
 
-        <div className="contact-form-container">
+                <div className="contact-form-container">
 
-            <h2>Send your message to us:</h2>
-            <form onSubmit={handleSubmit}>
-                <div className="form-group">
-                    <label htmlFor="name">Name:</label>
-                    <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                    />
+                    <h2>Send your message to us:</h2>
+                    <form onSubmit={handleSubmit}>
+                        <div className="form-group">
+                            <label htmlFor="name">Name:</label>
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                value={formData.name}
+                                onChange={handleChange}
+                                required
+                            />
+                        </div>
+
+                        <div className="form-group">
+                            <label htmlFor="email">Email:</label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                value={formData.email}
+                                onChange={handleChange}
+                                required
+                            />
+                        </div>
+
+                        <div className="form-group">
+                            <label>Are you looking for what kind of collaboration:</label>
+                            <input
+                                type="email"
+                                id="collaborationType"
+                                name="collaborationType"
+                                value={formData.collaborationType}
+                                onChange={handleChange}
+                                required
+                            />
+
+                        </div>
+
+                        <button type="submit" className="submit-btn">Send Message</button>
+                    </form>
                 </div>
-
-                <div className="form-group">
-                    <label htmlFor="email">Email:</label>
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
-
-                <div className="form-group">
-                    <label>Are you looking for what kind of collaboration:</label>
-                    <input
-                        type="email"
-                        id="collaborationType"
-                        name="collaborationType"
-                        value={formData.collaborationType}
-                        onChange={handleChange}
-                        required
-                    />
-
-                </div>
-
-                <button type="submit" className="submit-btn">Send Message</button>
-            </form>
-        </div>
-        </section>
+            </section>
             <div className="hero-content">
-                <h1>Why You</h1>
-                <p>
-                    Because our success depends on yours! You're passionate about cybersecurity,
-                    data protection is one of your priorities, you're looking to develop your skills in a
-                    stimulating and constantly evolving sector, and you're looking for a rich and varied experience...
-                    many opportunities are available to you at SOFTAWERTICH!
-                </p>
-                <h2>Why US ?</h2>
-                <p>
-                    At  SOFTAWERTICH, employees are valued and empowered. We have much more than a job to offer you:
-                    A collaborative work environment that promotes diversity and mutual respect,
-                    Assignments that stimulate your intellectual curiosity,
-                    The opportunity to grow and flourish in a career with a future
-                </p>
+                <div className="container py-5">
+                    <div className="row">
+                        {cardsData.map((card) => (
+                            <div key={card.id} className="col-md-6 mb-4">
+                                <div className="card h-100 border-0 shadow-sm transition-transform" style={{ transition: 'transform 0.3s' }}>
+                                    <img
+                                        src={card.imageUrl}
+                                        className="card-img-top why-images"
+                                        alt={card.title}
+                                    />
+                                    <div className="card-body">
+                                        <h4 className="card-title fw-bold">{card.title}</h4>
+                                        <p className="card-text">{card.text}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
             </div>
 
-<Footer/>
+            <Footer/>
         </div>
     );
 };
 
 export default Career;
-

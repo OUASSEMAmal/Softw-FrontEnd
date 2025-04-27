@@ -1,134 +1,134 @@
 .trust-page {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 .trust-section {
-    background-color: #ffffff;
-    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin-top: 40px;
 }
 
 .founder-section {
-    width: 100%;
-    margin-bottom: 40px;
-}
-
-.founder-image {
-
-    background-size: cover;
-
     display: flex;
-    margin-left: -100px;
-    position: relative;
-}
-
-.founder-image::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-
-}
-
-.founder-title {
-    color: #0b0101;
-    font-size: 1.5rem;
-    z-index: 1;
-    text-align: left;
-    padding: 0 20px;
-}
-
-.trust-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.trust-title {
-    font-size: 1.9rem;
-    color: #2c3e50;
-    display: flex;
-    margin-bottom: 30px;
-    margin-left: 450px;
-    margin-top: 60px;
-
-}
-
-.trust-icon {
-    margin-right:   20px;
-    font-size: 1.9rem;
-    color: #3498db;
-}
-
-.Whotrustuse {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 20px auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-}
-
-.trust-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
     gap: 40px;
 }
 
-.trust-text {
-    flex: 1;
- margin-left: 200px;
-    margin-top: -200px;
-    min-width: 50px;
-}
-
-.trust-quote {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    color: #0b0101;
-    font-weight: 500;
-    margin-bottom: 20px;
-    font-style: italic;
-    position: relative;
-}
-
-
-.trust-badges {
+.founder-content {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    min-width: 300px;
+    align-items: center;
+    text-align: center;
 }
 
-
-.trust-badge:hover {
-    transform: translateY(-5px);
+.founder-title {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
+.founder-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 10%;
+    object-fit: cover;
+    border: 5px solid #ffffff;
+    margin-bottom: 30px;
+}
 
+.founder-message {
+    max-width: 800px;
+    margin: 0 auto;
+}
 
+.founder-quote {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.founder-signature {
+    margin-top: 40px;
+}
+
+.founder-name {
+    font-weight: bold;
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+}
+
+.founder-position {
+    font-style: italic;
+    color: #7397bc;
+}
+
+.trust-container {
+    margin-top: 60px;
+    text-align: center;
+}
+
+.trust-title {
+    font-size: 1.8rem;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.trust-icon {
+    color: #7397bc;
+}
+
+.trust-partners-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
     .founder-title {
-        font-size: 2rem;
+        font-size: 1.5rem;
+    }
+
+    .founder-quote {
+        font-size: 1rem;
+        padding: 0 15px;
+    }
+
+    .founder-image {
+        width: 150px;
+        height: 150px;
     }
 
     .trust-title {
-        font-size: 1.8rem;
+        font-size: 1.4rem;
     }
+}
 
-    .trust-quote {
+@media (max-width: 480px) {
+    .founder-title {
         font-size: 1.3rem;
     }
 
-    .trust-content {
-        flex-direction: column;
+    .founder-name {
+        font-size: 1.1rem;
     }
 
-    .trust-badges {
-        width: 100%;
+    .trust-title {
+        flex-direction: column;
+        gap: 8px;
     }
 }

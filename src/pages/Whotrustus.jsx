@@ -9,39 +9,35 @@ import Footer from "../components/Footer";
 
 const Whotrustus = () => {
     return (
-        <div className="trust-page">
+        <div>
             <Header />
             <Navbar />
 
             <div className="trust-section">
                 <div className="founder-section">
                     <div className="founder-content">
-                        <h2 className="founder-title">WORD FROM THE FOUNDER</h2>
-                        <img src={Tibari} alt="Tibari" className="Tibari" />
+                        <h2 className="founder-title">MOT DU FONDATEUR</h2>
+                        <img src={Tibari} alt="Tibari" className="founder-image" />
 
-                        <div className="trust-content">
-                            <div className="trust-text">
-                                <p className="trust-quote">
-                                    Cybersecurity has become a weapon, a strength, and a priority
-                                    to be had in various types of businesses.
-                                    We are convinced by the solutions we integrate and we are partners
-                                    with two of the top 10 global providers in the cyber defense
-                                    and cyber security sector.
-                                </p>
-                            </div>
+                        <div className="founder-message">
+                            <p className="founder-quote">
+                                La cybersécurité est devenue une arme, une force et une priorité à avoir
+                                dans différents types d'entreprises. Nous sommes convaincus par les solutions
+                                que nous intégrons et nous sommes partenaires de 2 des 10 premiers fournisseurs
+                                mondiaux du secteur de la cyberdéfense et cybersécurité au monde.
+                            </p>
                         </div>
-                </div>
+                    </div>
 
-                <div className="trust-container">
-                    <h2 className="trust-title">
-                        <FaHandshake className="trust-icon" /> Who Trusts Us  </h2>
-                       <img src={Whotrustuse} alt="Whotrustuse" className="Whotrustuse" />
-
-
+                    <div className="trust-container">
+                        <h2 className="trust-title">
+                            <FaHandshake className="trust-icon" /> QUI NOUS FAIT CONFIANCE
+                        </h2>
+                        <img src={Whotrustuse} alt="Whotrustuse" className="trust-partners-image" />
                     </div>
                 </div>
             </div>
-            <Footer />
+            <Footer style={{ marginTop: "200px" }} />
         </div>
     );
 };

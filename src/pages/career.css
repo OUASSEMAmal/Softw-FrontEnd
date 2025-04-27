@@ -56,11 +56,13 @@
     cursor: pointer;
 }
 
-.hero-content {
-    padding: 90px;
+.hero-career {
+    padding: 40px;
     margin-bottom: 120px;
-    margin-inside:100px ;
+    margin-inside: 100px;
+    margin-top: 40px;
 }
+
 .radio-group input[type="radio"] {
     margin: 0;
 }
@@ -81,42 +83,127 @@
     background-color: #3a8fd4;
 }
 
-@media (max-width: 768px) {}
-.footer-div{
-    height: 230px;
-    margin-top: -200px;
+.card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
-.footer-div a {
-    color: whitesmoke;
-    text-decoration: none;
+.why-images{
+    height: 270px;
+    width: 100%;
 }
-.stars{
-    height: 100%;
-    width: 160px;
-}
-.logo-black{
-    width: 160px;
-    height: 80px;
-    display: block;
-    margin: 20px auto 20px;
-}
-.terms ul{
-    margin-left: -20px;
-    gap: 15rem;
-    margin-bottom: 30px;
-}
-.terms p {
-    font-family: Open Sans, sans-serif;
-}
-.stats-section{
+
+
+
+
+
+
+
+
+.stats-section {
     background-color: #deeee4;
     width: 100%;
     border-radius: 20px;
 }
 
-/* Responsive design */
-@media (max-width: 768px) {
+/* ================= RESPONSIVE DESIGN ================= */
+/* Grands écrans (1200px et plus) */
+@media (min-width: 1200px) {
     .contact-form-container {
-        padding: 20px;
+        margin-right: 850px;
+    }
+    .card:hover {
+        transform: scale(1.03);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+    .why-images{
+        height: 270px;
+        width: 100%;
+    }
+}
+
+/* Tablettes en mode paysage (992px - 1199px) */
+@media (max-width: 1199px) {
+    .contact-form-container {
+        margin-right: 600px;
+    }
+    .hero-career {
+        padding: 70px;
+        margin-bottom: 100px;
+    }
+}
+
+/* Tablettes (768px - 991px) */
+@media (max-width: 991px) {
+    .contact-form-container {
+        max-width: 100%;
+        margin-right: 0;
+        margin-bottom: 40px;
+    }
+    .hero-career {
+        padding: 50px;
+        margin-bottom: 80px;
+    }
+    .terms ul {
+        gap: 10rem;
+    }
+}
+
+/* Petites tablettes et grands téléphones (576px - 767px) */
+@media (max-width: 767px) {
+    .contact-form-container {
+        padding: 25px;
+    }
+    .hero-career {
+        padding: 40px 30px;
+        margin-bottom: 60px;
+    }
+
+    .terms ul {
+        flex-direction: column;
+        gap: 1.5rem;
+        margin-left: 0;
+    }
+}
+
+/* Téléphones (jusqu'à 575px) */
+@media (max-width: 575px) {
+    .contact-form-container {
+        padding: 20px 15px;
+    }
+    .contact-form-container h2 {
+        font-size: 20px;
+    }
+    .hero-career {
+        padding: 30px 20px;
+        margin-bottom: 50px;
+    }
+    .form-group input[type="text"],
+    .form-group input[type="email"] {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+    .submit-btn {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+
+}
+
+/* Très petits téléphones (jusqu'à 400px) */
+@media (max-width: 400px) {
+    .contact-form-container {
+        padding: 15px 10px;
+    }
+    .hero-career {
+        padding: 20px 15px;
+        margin-bottom: 40px;
+    }
+    .contact-form-container h2 {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+    .form-group {
+        margin-bottom: 15px;
     }
 }
