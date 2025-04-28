@@ -16,7 +16,8 @@
 }
 .hero-overlay #btn1 {
   background-color: #7ed957;
-  padding-right: 40px;
+  margin: 15px;
+
 }
 .hero-overlay #btn2 {
   background-color: #aee696;
@@ -203,6 +204,97 @@
   color: #333;
   text-decoration: none;
 }
+
+
+
+
+
+
+
+/* Cybersecurity Menu Styles */
+.cyber-menu-container {
+  position: relative;
+  display: inline-block;
+}
+
+.cyber-submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #abe4ac;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1000;
+  border-radius: 8px;
+  padding: 10px 0;
+  animation: fadeIn 0.3s ease;
+  border: 1px solid #e0e0e0;
+}
+
+.cyber-submenu a {
+  display: block;
+  padding: 10px 20px;
+  color: #333;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+
+
+/* Animation for dropdown */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Navbar link styling - ensure it matches your theme */
+.nav ul li a {
+  color: #01030b;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.nav ul li:hover > a {
+  color: #7ed957; /* Match your theme's hover color */
+}
+
+/* If you need to style the active cybersecurity link */
+.nav ul li.cyber-menu-container > a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #7ed957;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.nav ul li.cyber-menu-container:hover > a::after {
+  transform: scaleX(1);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Divider */
 .divider {

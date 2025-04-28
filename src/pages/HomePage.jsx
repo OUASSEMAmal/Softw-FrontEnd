@@ -9,7 +9,7 @@ import Header from "../components/home/jsx/header";
 import ContactCard from "../components/home/jsx/ContactCard";
 import StatsSection from "../components/StatsSection";
 import Footer from "../components/Footer";
-
+import { Link } from 'react-router-dom';
 
 const HomePage = () => {
 
@@ -69,7 +69,7 @@ const HomePage = () => {
             Enterprise-grade cybersecurity solutions to protect your business from evolving
             digital threats
           </p>
-          <button className="explore-btn">Explore Solutions</button>
+            <Link to="/Products"> <button className="explore-btn">Explore Solutions</button></Link>
           <div className="divider"></div>
         </section>
 

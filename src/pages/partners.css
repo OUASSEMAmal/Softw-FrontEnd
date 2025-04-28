@@ -15,6 +15,14 @@
     color: #d1c6c6;
     margin-bottom: 30px;
 }
+.breadcrumb a {
+
+    text-decoration: none;
+    font-size: 40px;
+    color: #2c7be5;
+    cursor: pointer;
+
+}
 
 .breadcrumb span {
     font-size: 40px;

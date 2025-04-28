@@ -9,6 +9,7 @@ import crowdstrike from '../assets/part/crowdstrike-logo.png'
 import TrendMicro from '../assets/part/TrendMicro-Logo.png'
 import Footer from "../components/Footer";
 import ContactCard from "../components/home/jsx/ContactCard";
+import { Link } from 'react-router-dom';
 
 const Partners = () => {
     const partners = [
@@ -27,7 +28,7 @@ const Partners = () => {
                 style={{ backgroundImage: `url(${backgroundImage})` }}
             >
                 <div className="breadcrumb">
-                    <span>Accueil</span>  <span> / </span> <span>Partners</span>
+                    <Link to="/">Accueil</Link>  <span> / </span> <span>Partners</span>
                 </div>
             </section>
         <div className="partners-page">

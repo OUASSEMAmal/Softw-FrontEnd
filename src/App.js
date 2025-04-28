@@ -7,6 +7,7 @@ import SignUp from "./components/Auth/SignUp";
 import Partners from "./pages/partners";
 import Products from "./pages/ProductHS/Products";
 import Whotrustus from "./pages/Whotrustus";
+import Cybersecurity from "./pages/Cyber/Cybersecurity";
 
 
 
@@ -17,9 +18,11 @@ function App() {
       <Route path="/partners" element={<Partners />} />
       <Route path="/career" element={<Career />} />
       <Route path="/Products" element={<Products />} />
+      <Route path="/Cybersecurity" element={<Cybersecurity/>} />
       <Route path="/Whotrustus" element={<Whotrustus/>}/>
       <Route path="/login" element={<SignIn />} />
       <Route path="/Singup" element={<SignUp />} />
+
 
     </Routes>
   </Router>);
