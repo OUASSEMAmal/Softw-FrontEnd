@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import './SingIn.css';
+import SignUp from "./SignUp";
+import { Link } from 'react-router-dom';
+import backgroundImage from '../../assets/background.jpg';
 
 const SignIn = () => {
   const [email, setEmail] = useState('');
@@ -17,17 +20,23 @@ const SignIn = () => {
       return;
     }
 
-    // Ici vous ajouteriez la logique de connexion réelle
     console.log('Tentative de connexion avec:', { email, password, rememberMe });
-
-    // Simuler une connexion (à remplacer par un appel API réel)
-    // if (email !== 'test@example.com' || password !== 'password123') {
-    //   setError('Email ou mot de passe incorrect');
-    // }
   };
 
   return (
-      <div className="signin-container">
+      <div
+          className="signin-container"
+          style={{
+            backgroundImage: `url(${backgroundImage})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            minHeight: '100vh',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center'
+          }}
+      >
         <div className="signin-card">
           <h2 className="signin-title">Connexion</h2>
 
@@ -79,7 +88,7 @@ const SignIn = () => {
           </form>
 
           <div className="signup-link">
-            Pas encore de compte ? <a href="/signup">S'inscrire</a>
+            Pas encore de compte ? <Link to="/SignUp"> S'inscrire </Link>
           </div>
 
           <div className="social-login">
@@ -88,7 +97,6 @@ const SignIn = () => {
               <button className="social-button google">
                 <i className="fab fa-google"></i>
               </button>
-
             </div>
           </div>
         </div>
