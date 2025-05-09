@@ -1,10 +1,14 @@
 /* Footer.css */
+
+
+
 .footer-div {
     height: 230px;
-    margin-top: -150px;
+    margin-top: -300px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+
 }
 
 .footer-div a {
@@ -30,6 +34,7 @@
     width: 160px;
     height: 80px;
     display: block;
+
     margin: 20px auto;
     object-fit: contain;
 }

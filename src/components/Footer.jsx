@@ -6,7 +6,7 @@ import './Footer.css'
 const Footer = ({style }) => {
   return (
       <footer className="bg-black" style={style} >
-        <div className="footer-div d-flex justify-content-between align-items-center">
+        <div className="footer-div">
           <img src={StarsLeft} alt="stars" className="stars" />
 
           <div className="terms text-white text-center">

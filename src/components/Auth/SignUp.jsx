@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import './SingUp.css';
 import backgroundImage from '../../assets/background.jpg';
+import {signup, signUp} from "../../services/authService";
 
 const SignUp = () => {
     const [formData, setFormData] = useState({
+
         firstName: '',
         lastName: '',
         email: '',
@@ -56,7 +58,21 @@ const SignUp = () => {
     };
 
     const handleSubmit = async (e) => {
+
         e.preventDefault();
+        const userData= {
+            username: formData.firstName+' '+formData.lastName,
+            email: formData.email,
+            password: formData.password,
+        }
+        console.log(userData)
+        try {
+            const result = await signup(userData);
+           console.log(result.message);
+        } catch (err) {
+            console.log(err.message);
+        }
+
 
         if (validateForm()) {
             setIsSubmitting(true);

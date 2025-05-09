@@ -9,6 +9,9 @@ import Products from "./pages/ProductHS/Products";
 import Whotrustus from "./pages/Whotrustus";
 import Cybersecurity from "./pages/Cyber/Cybersecurity";
 import ForgotPassword from "./components/Auth/ForgotPassword";
+import CyberAttacksPage from "./pages/Cyber/ CyberAttacksPage";
+
+import CyberDefensePage from "./pages/Cyber/CyberDefensePage";
 
 
 
@@ -24,6 +27,9 @@ function App() {
       <Route path="/login" element={<SignIn />} />
       <Route path="/SignUp" element={<SignUp />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
+
+      <Route path="/cyber-attacks" element={<CyberAttacksPage />} />
+      <Route path="/cyber-defense" element={<CyberDefensePage />} />
 
 
     </Routes>

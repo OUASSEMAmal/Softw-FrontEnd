@@ -23,14 +23,7 @@ const Partners = () => {
         <div>
             <Header />
             <NavBar />
-            <section
-                className="hero-section"
-                style={{ backgroundImage: `url(${backgroundImage})` }}
-            >
-                <div className="breadcrumb">
-                    <Link to="/">Accueil</Link>  <span> / </span> <span>Partners</span>
-                </div>
-            </section>
+
         <div className="partners-page">
             {/* Breadcrumb */}
 

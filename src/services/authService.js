@@ -1,10 +1,47 @@
 import api from './api';
 
+
 export const signIn = async (credentials) => {
-  const response = await api.post('/auth/SignIn', credentials);
-  localStorage.setItem('token', response.data.token);
-  return response.data;
+  try {
+    const response = await api.post('/auth/SignIn', credentials);
+
+    if (response.data.token) {
+      localStorage.setItem('token', response.data.token); // Stocker le token
+    }
+
+    return response.data;
+  } catch (error) {
+    throw new Error(
+        error.response?.data?.message || 'Email ou mot de passe incorrect'
+    );
+  }
 };
+
+
+
+
+// src/services/authService.js
+export const signup = async (userData) => {
+  try {
+    const response = await fetch('http://localhost:8079/api/auth/signup', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(userData),
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.message || 'Signup failed');
+    }
+
+    return await response.json();
+  } catch (error) {
+    throw error;
+  }
+};
+
 
 export const signUp = async (userData) => {
   const response = await api.post('/auth/SignUp', userData);

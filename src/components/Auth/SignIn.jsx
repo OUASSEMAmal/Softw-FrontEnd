@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './SingIn.css';
-import SignUp from "./SignUp";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { signIn } from '../../services/authService'; // Assure-toi que le chemin est correct
 import backgroundImage from '../../assets/background.jpg';
 
 const SignIn = () => {
@@ -9,18 +9,24 @@ const SignIn = () => {
   const [password, setPassword] = useState('');
   const [rememberMe, setRememberMe] = useState(false);
   const [error, setError] = useState('');
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
 
-    // Validation simple
     if (!email || !password) {
       setError('Veuillez remplir tous les champs');
       return;
     }
 
-    console.log('Tentative de connexion avec:', { email, password, rememberMe });
+    try {
+      await signIn({ email, password }); // backend vérifie
+      navigate('/product'); // redirection après succès
+    } catch (err) {
+      setError(err.message);
+    }
   };
 
   return (
@@ -88,7 +94,7 @@ const SignIn = () => {
           </form>
 
           <div className="signup-link">
-            Pas encore de compte ? <Link to="/SignUp"> S'inscrire </Link>
+            Pas encore de compte ? <Link to="/SignUp">S'inscrire</Link>
           </div>
 
           <div className="social-login">

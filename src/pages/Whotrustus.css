@@ -19,6 +19,20 @@
     gap: 40px;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .founder-content {
     display: flex;
     flex-direction: column;
@@ -47,6 +61,7 @@
     max-width: 800px;
     margin: 0 auto;
 }
+
 
 .founder-quote {
     font-size: 1.2rem;
@@ -90,11 +105,13 @@
     color: #7397bc;
 }
 
-.trust-partners-image {
+.trust-partners-image1 {
     max-width: 100%;
     height: auto;
+    margin-right: 50px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+
 }
 
 /* Responsive Design */

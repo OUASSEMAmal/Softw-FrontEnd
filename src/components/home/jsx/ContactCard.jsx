@@ -23,22 +23,6 @@ const ContactCard= () => {
                 </div>
             </div>
 
-            {/* Section Liens */}
-            <div className="links-section">
-                <h3 className="links-title">Other</h3>
-                <div className="contact-item">
-                    <span> References </span>
-                </div>
-                <div className="contact-item">
-                    <span> Partners </span>
-                </div>
-                <div className="contact-item">
-                    <span> Media library</span>
-                </div>
-                <div className="contact-item">
-                    <span> Contact </span>
-                </div>
-            </div>
         </div>
     );
 };
