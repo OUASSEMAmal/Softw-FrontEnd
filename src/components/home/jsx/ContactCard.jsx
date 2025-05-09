@@ -9,12 +9,13 @@ const ContactCard= () => {
             <div className="contact-info">
                 <div className="contact-item">
                     <FiMapPin className="contact-icon" />
-                    <span>Rue Dakar, IMM N°5, APP N°1, Rabat</span>
+                    <span>10 rue ghandi, Rabat</span>
                 </div>
 
                 <div className="contact-item">
                     <FiMail className="contact-icon" />
-                    <span>Contact@softwaretich.com</span>
+                    <span> Contact@beamtel.com<br />
+                     sales@beamtel.ma </span>
                 </div>
 
                 <div className="contact-item">

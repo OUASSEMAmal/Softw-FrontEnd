@@ -33,7 +33,7 @@ const StatsSection = () => {
         <section className="py-4 stats-section">
             <div className="container">
                 <h2 className="display-6 fw-bold text-center text-success mb-5">
-                    SOFTAWERTICH in Numbers
+                    BEAMTEL in Numbers
                 </h2>
                 <div className="row g-4">
                     {stats.map((stat, index) => (

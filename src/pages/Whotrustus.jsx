@@ -13,8 +13,12 @@ import C5 from "../assets/WHO/C5.png";
 import C6 from "../assets/WHO/C6.png";
 import C7 from "../assets/WHO/C7.png";
 import C8 from "../assets/WHO/C8.png";
+import C9 from "../assets/WHO/C9.png";
+import C10 from "../assets/WHO/C10.png";
+import C11 from "../assets/WHO/C11.png";
 
 import "./Whotrustus.css";
+import {text} from "framer-motion/client";
 
 const partnerData = [
     {
@@ -27,28 +31,41 @@ const partnerData = [
     },
     {
         img: C3,
-        text: "Technical Audit\nWireless capacity and security\nImplémentation du Firewall XGS de Sophos."
+        text: "Deal Fortinet en cours.\n Implémentation de Fortiweb VM"
     },
     {
         img: C4,
-        text: "Deal Fortinet en cours.\nImplémentation de Fortiweb VM"
-    },
-    {
-        img: C5,
         text: "Implémentation EDR"
     },
     {
-        img: C6,
+        img: C5,
         text: "Accompagnement à la certification ISO27001 en France."
     },
     {
+        img: C6,
+        text: "Accompagnement la maitrise du standard\ncyber sécurité pour la 5G En France."
+    },
+    {
         img: C7,
-        text: "La commande publique"
+        text: "Technical Audit\nWireless capacity and security. \n Implémentation du Firewall XGS de Sophos."
     },
     {
         img: C8,
-        text: "Implémentation de la solution Firewall XGS de Sophos."
+        text: ""
+    },
+    {
+        img: C9,
+        text: "Contrat 2 ans : 6 Consultants en Transformation digitale.\n Client : Ministère de La Santé au Maroc."
+    },
+    {
+        img: C10,
+        text: "Contrat Cadre : Consultants en\nIngénierie/Conseils/R&D Labs"
+    },
+    {
+        img: C11,
+        text: "Partenaire et Sponsor DIAMOND"
     }
+
 ];
 
 const Whotrustus = () => {
@@ -72,11 +89,11 @@ const Whotrustus = () => {
 
                     <div className="trust-container">
                         <h2 className="trust-title">
-                            <FaHandshake className="trust-icon" /> QUI NOUS FAIT CONFIANCE
+                            <FaHandshake className="trust-icon" />Quelques CLIENTS CYBER SÉCURITÉ
                         </h2>
 
                         <div className="partners-grid">
-                            {partnerData.map((partner, index) => (
+                            {partnerData.slice(0, 8).map((partner, index) => (
                                 <div key={index} className="partner-card">
                                     <img src={partner.img} alt={`C${index + 1}`} className="partner-logo" />
                                     <p className="partner-text">{partner.text}</p>
@@ -84,6 +101,25 @@ const Whotrustus = () => {
                             ))}
                         </div>
                     </div>
+
+
+                    <div className="trust-container">
+                        <h2 className="trust-title">
+                            <FaHandshake className="trust-icon" />Quelques CLIENTS IT/TELCO
+                        </h2>
+
+                        <div className="partners-grid">
+                            {partnerData.slice(7, 11).map((partner, index) => (
+                                <div key={index} className="partner-card">
+                                    <img src={partner.img} alt={`C${index + 9}`} className="partner-logo" />
+                                    <p className="partner-text">{partner.text}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+
+
                 </div>
             </div>
 

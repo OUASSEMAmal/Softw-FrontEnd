@@ -23,7 +23,11 @@
     height: 60px;
     width: auto;
 }
-
+.beamtel-img{
+    height:100px;
+    margin-left: 20px;
+    width: auto;
+}
 /* Header layout */
 .hero-header,
 .another-section {

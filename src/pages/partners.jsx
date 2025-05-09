@@ -10,6 +10,7 @@ import TrendMicro from '../assets/part/TrendMicro-Logo.png'
 import Footer from "../components/Footer";
 import ContactCard from "../components/home/jsx/ContactCard";
 import { Link } from 'react-router-dom';
+import {FaArrowRight} from "react-icons/fa";
 
 const Partners = () => {
     const partners = [
@@ -53,6 +54,15 @@ const Partners = () => {
                     </div>
                 ))}
             </div>
+
+
+            <Link to="/References" className="references-button">
+                <button>
+                    BEAMTEL'S REFERENCES
+                    <FaArrowRight className="icon" /> {/* Icône flèche */}
+                </button>
+            </Link>
+
         </div>
 
             <div>

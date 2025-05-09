@@ -21,13 +21,13 @@ const Career = () => {
             text: 'Because our success depends on yours! You\'re passionate about cybersecurity,\n' +
                 'data protection is one of your priorities, you\'re looking to develop your skills in a\n' +
                 'stimulating and constantly evolving sector, and you\'re looking for a rich and varied experience...\n' +
-                'many opportunities are available to you at SOFTAWERTICH!',
+                'many opportunities are available to you at BEAMTEL!',
             imageUrl: 'https://imgs.search.brave.com/Yq-DB7Tyd4ELbnvnfRVlQ5rgElI0vZFaru19qqGr8p4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS1waG90/by95b3VuZy1naXJs/LXNocnVnZ2luZy1z/aG91bGRlcnMtaS1r/bm93LXdoeS1hcmUt/eW91LXNob3V0aW5n/LW1lXzI2MjI4OC0z/NjM1LmpwZz9zZW10/PWFpc19oeWJyaWQ',
         },
         {
             id: 2,
             title: 'Why US ?',
-            text: " At  SOFTAWERTICH, employees are valued and empowered. We have much more than a job to offer you:\n" +
+            text: " At  BEAMTEL, employees are valued and empowered. We have much more than a job to offer you:\n" +
                 "A collaborative work environment that promotes diversity and mutual respect,\n" +
                 "Assignments that stimulate your intellectual curiosity,\n" +
                 "The opportunity to grow and flourish in a career with a future",

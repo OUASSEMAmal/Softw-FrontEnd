@@ -31,6 +31,7 @@ const Navbar = () => {
                                 )}
                             </li>
                             <li><Link to ="/Whotrustus">Who trust us ?</Link></li>
+
                             <li><Link to ="/career">Contact us</Link></li>
                             <li><button id="btn1" style={{ marginLeft: 500}}><Link to="/login"><b>Login</b></Link></button></li>
                             <li><button id="btn2"><Link to="/SignUp"><b>Signup</b></Link></button></li>

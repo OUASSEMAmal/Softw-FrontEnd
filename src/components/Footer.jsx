@@ -18,7 +18,7 @@ const Footer = ({style }) => {
               <li><a href="/contact-us"><b>Contact us</b></a></li>
             </ul>
             <div className="container">
-              <p className="text-center small ">© 2025 SOFTAWERTICH. All rights reserved.</p>
+              <p className="text-center small ">© 2025 BEAMTEL. All rights reserved.</p>
             </div>
           </div>
 

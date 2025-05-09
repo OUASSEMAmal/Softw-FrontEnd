@@ -1,31 +1,45 @@
 import React, { useState } from 'react';
-import './SingIn.css';
+import "./SingIn.css"
 import { Link, useNavigate } from 'react-router-dom';
-import { signIn } from '../../services/authService'; // Assure-toi que le chemin est correct
+import axios from 'axios';
 import backgroundImage from '../../assets/background.jpg';
 
 const SignIn = () => {
+  const navigate = useNavigate(); // pour rediriger après connexion
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [rememberMe, setRememberMe] = useState(false);
   const [error, setError] = useState('');
-  const navigate = useNavigate();
-
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
 
+    // Validation simple
     if (!email || !password) {
       setError('Veuillez remplir tous les champs');
       return;
     }
 
     try {
-      await signIn({ email, password }); // backend vérifie
-      navigate('/product'); // redirection après succès
+      // Envoi de la requête de connexion au backend
+      const response = await axios.post('http://localhost:8081/api/auth/signin', {
+        email: email,
+        password: password
+      });
+
+      // Récupération du token et stockage dans le localStorage
+      const token = response.data.token; // ou accessToken selon ton backend
+      localStorage.setItem('token', token); // tu peux adapter à sessionStorage si besoin
+
+      console.log('Connexion réussie ✅');
+      navigate('/');
+
+      // Remplace par la route vers ton dashboard ou page suivante
+
     } catch (err) {
-      setError(err.message);
+      console.error('Erreur lors de la connexion ', err.response?.data || err.message);
+      setError("Une erreur est survenue. Veuillez vérifier vos identifiants.");
     }
   };
 
@@ -46,8 +60,10 @@ const SignIn = () => {
         <div className="signin-card">
           <h2 className="signin-title">Connexion</h2>
 
+          {/* Affichage de l'erreur s'il y en a une */}
           {error && <div className="error-message">{error}</div>}
 
+          {/* Formulaire de connexion */}
           <form onSubmit={handleSubmit} className="signin-form">
             <div className="form-group">
               <label htmlFor="email">Email</label>
@@ -94,7 +110,7 @@ const SignIn = () => {
           </form>
 
           <div className="signup-link">
-            Pas encore de compte ? <Link to="/SignUp">S'inscrire</Link>
+            Pas encore de compte ? <Link to="/SignUp"> S'inscrire </Link>
           </div>
 
           <div className="social-login">
