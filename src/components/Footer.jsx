@@ -1,6 +1,6 @@
 import StarsLeft from "../assets/Footer/stars-left.jpg";
 import StarsRight from "../assets/Footer/stars-right.png";
-import LogoBlack from "../assets/Footer/logo-black.jpg";
+import LogoBlack from "../assets/Footer/LogoBlack.png";
 import './Footer.css'
 
 const Footer = ({style }) => {

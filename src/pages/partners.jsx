@@ -56,13 +56,6 @@ const Partners = () => {
             </div>
 
 
-            <Link to="/References" className="references-button">
-                <button>
-                    BEAMTEL'S REFERENCES
-                    <FaArrowRight className="icon" /> {/* Icône flèche */}
-                </button>
-            </Link>
-
         </div>
 
             <div>

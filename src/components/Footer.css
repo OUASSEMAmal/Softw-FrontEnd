@@ -31,9 +31,8 @@
 }
 
 .logo-black {
-    width: 160px;
-    height: 80px;
-    display: block;
+    width: 150px;
+    height: 100px;
 
     margin: 20px auto;
     object-fit: contain;

@@ -17,18 +17,8 @@ const Navbar = () => {
                             <li><Link to="/">Home</Link></li>
                             <li><Link to="/Products">Products</Link></li>
                             <li><Link to="/partners">Partners</Link></li>
-                            <li
-                                className="cyber-menu-container"
-                                onMouseEnter={() => setShowCyberMenu(true)}
-                                onMouseLeave={() => setShowCyberMenu(false)}
-                            >
-                                <Link to="/Cybersecurity">Cybersecurity</Link>
-                                {showCyberMenu && (
-                                    <div className="cyber-submenu">
-                                        <Link to="/cybersecurity/attacks">Cyber Attacks</Link>
-                                        <Link to="/cybersecurity/defense">Cyber Defense</Link>
-                                    </div>
-                                )}
+                           <li>
+                                <Link to="/references">References</Link>
                             </li>
                             <li><Link to ="/Whotrustus">Who trust us ?</Link></li>
 

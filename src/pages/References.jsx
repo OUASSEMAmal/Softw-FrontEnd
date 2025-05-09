@@ -15,6 +15,16 @@ import ext2 from "../assets/WHO/ext2.png";
 
 const References = () => {
     const references = [
+
+        {
+            logo: soo,
+            description: "BEAMTEL intégrateur de solutions\n Cyber Sécurité de SOPHOS"
+        },
+        {
+            logo: ext2 ,
+            description: "BEAMTEL partenaire officiel"
+        },
+
         {
             logo: C9,
             description: "Contact 2 ans : 6 Consultants en Transformation Staire",
@@ -24,15 +34,8 @@ const References = () => {
             logo: C10,
             description: "Contrat Cale : Consultants en Ingénierie/Conseils/M.B.D. Labs"
         },
-        {
-            logo: soo,
 
-            description: "BEAMTEL intégrateur de solutions\n Cyber Sécurité de SOPHOS"
-        },
-        {
-            logo: ext2 ,
-            description: "BEAMTEL partenaire officiel"
-        },
+
         {
             logo:C11,
 

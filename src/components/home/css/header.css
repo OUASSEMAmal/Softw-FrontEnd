@@ -1,7 +1,7 @@
 /* Section générale */
 .hero-overlay {
     box-sizing: border-box;
-    margin-top: 15px;
+    margin-top: 10px;
     background: white;
     margin-bottom: 1rem;
     width: 100%;
@@ -25,7 +25,8 @@
 }
 .beamtel-img{
     height:100px;
-    margin-left: 20px;
+    margin-top: -7px;
+    margin-left: 10px;
     width: auto;
 }
 /* Header layout */
