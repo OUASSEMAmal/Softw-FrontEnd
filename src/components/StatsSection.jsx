@@ -35,9 +35,9 @@ const StatsSection = () => {
                 <h2 className="display-6 fw-bold text-center text-success mb-5">
                     BEAMTEL in Numbers
                 </h2>
-                <div className="row g-4">
+                <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
                     {stats.map((stat, index) => (
-                        <div key={index} className="col-12 col-sm-6 col-lg-3 mt-1">
+                        <div key={index} className="col">
                             <StatCard
                                 image={stat.image}
                                 value={stat.value}
