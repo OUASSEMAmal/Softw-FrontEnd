@@ -86,7 +86,7 @@ const Products = () => {
             categoryKey: "firewalls"
         },
         {
-            id: 13,
+            id: 2,
             name: "Sophos XGS3100",
             categoryId: 0,
             category: "Hardware",
@@ -97,7 +97,7 @@ const Products = () => {
             categoryKey: "firewalls"
         },
         {
-            id: 14,
+            id: 3,
             name: "Sophos XGS2100",
             categoryId: 0,
             category: "Hardware",
@@ -108,7 +108,7 @@ const Products = () => {
             categoryKey: "firewalls"
         },
         {
-            id: 15,
+            id: 4,
             name: "Cisco Firepower 1010",
             categoryId: 0,
             category: "Hardware",
@@ -119,7 +119,7 @@ const Products = () => {
             categoryKey: "firewalls"
         },
         {
-            id: 16,
+            id: 5,
             name: "Fortinet FortiGate FG-40F",
             categoryId: 0,
             category: "Hardware",
@@ -130,7 +130,7 @@ const Products = () => {
             categoryKey: "firewalls"
         },
         {
-            id: 17,
+            id: 6,
             name: "Cisco Meraki MX84",
             categoryId: 0,
             category: "Hardware",
@@ -141,7 +141,7 @@ const Products = () => {
             categoryKey: "firewalls"
         },
         {
-            id: 2,
+            id:7,
             name: "Fortinet FortiRouter 401E",
             categoryId: 4,
             category: "Hardware",
@@ -152,7 +152,7 @@ const Products = () => {
             categoryKey: "routers"
         },
         {
-            id: 3,
+            id:8,
             name: "Cisco RV340",
             categoryId: 4,
             category: "Hardware",
@@ -163,7 +163,7 @@ const Products = () => {
             categoryKey: "routers"
         },
         {
-            id: 4,
+            id:9,
             name: "Sophos RED 20",
             categoryId: 4,
             category: "Hardware",
@@ -174,7 +174,7 @@ const Products = () => {
             categoryKey: "routers"
         },
         {
-            id: 5,
+            id:10,
             name: "Fortinet FortiRouter 60D",
             categoryId: 4,
             category: "Hardware",
@@ -185,7 +185,7 @@ const Products = () => {
             categoryKey: "routers"
         },
         {
-            id: 6,
+            id: 11,
             name: "Cisco ISR 4331",
             categoryId: 4,
             category: "Hardware",
@@ -196,7 +196,7 @@ const Products = () => {
             categoryKey: "routers"
         },
         {
-            id: 7,
+            id: 12,
             name: "Sophos XGS 87",
             categoryId: 4,
             category: "Hardware",
@@ -207,7 +207,7 @@ const Products = () => {
             categoryKey: "routers"
         },
         {
-            id: 4,
+            id: 13,
             name: "Cisco Catalyst 2960-X",
             categoryId: 3,
             category: "Hardware",
@@ -218,7 +218,7 @@ const Products = () => {
             categoryKey: "switches"
         },
         {
-            id: 5,
+            id: 14,
             name: "Fortinet FortiSwitch 148F",
             categoryId: 3,
             category: "Hardware",
@@ -229,7 +229,7 @@ const Products = () => {
             categoryKey: "switches"
         },
         {
-            id: 6,
+            id: 15,
             name: "Sophos CS110-24",
             categoryId: 3,
             category: "Hardware",
@@ -240,7 +240,7 @@ const Products = () => {
             categoryKey: "switches"
         },
         {
-            id: 7,
+            id: 16,
             name: "Cisco SG350-28",
             categoryId: 3,
             category: "Hardware",
@@ -251,7 +251,7 @@ const Products = () => {
             categoryKey: "switches"
         },
         {
-            id: 8,
+            id: 17,
             name: "Fortinet FortiSwitch 124E",
             categoryId: 3,
             category: "Hardware",
@@ -262,7 +262,7 @@ const Products = () => {
             categoryKey: "switches"
         },
         {
-            id: 9,
+            id: 18,
             name: "Sophos CS210-48P",
             categoryId: 3,
             category: "Hardware",
@@ -273,7 +273,7 @@ const Products = () => {
             categoryKey: "switches"
         },
         {
-            id: 6,
+            id: 19,
             name: "Cisco Aironet 1832i",
             categoryId: 5,
             category: "Hardware",
@@ -284,7 +284,7 @@ const Products = () => {
             categoryKey: "access-point"
         },
         {
-            id: 7,
+            id: 20,
             name: "Fortinet FortiAP 231F",
             categoryId: 5,
             category: "Hardware",
@@ -295,7 +295,7 @@ const Products = () => {
             categoryKey: "access-point"
         },
         {
-            id: 8,
+            id: 21,
             name: "Sophos APX 320",
             categoryId: 5,
             category: "Hardware",
@@ -306,7 +306,7 @@ const Products = () => {
             categoryKey: "access-point"
         },
         {
-            id: 9,
+            id: 22,
             name: "Cisco Meraki MR36",
             categoryId: 5,
             category: "Hardware",
@@ -317,7 +317,7 @@ const Products = () => {
             categoryKey: "access-point"
         },
         {
-            id: 10,
+            id: 23,
             name: "Fortinet FortiAP U421EV",
             categoryId: 5,
             category: "Hardware",
@@ -328,7 +328,7 @@ const Products = () => {
             categoryKey: "access-point"
         },
         {
-            id: 11,
+            id: 24,
             name: "Sophos AP6 420",
             categoryId: 5,
             category: "Hardware",
@@ -339,7 +339,7 @@ const Products = () => {
             categoryKey: "access-point"
         },
         {
-            id: 7,
+            id: 25,
             name: "Cisco Meraki Z3",
             categoryId: 7,
             category: "Hardware",
@@ -350,7 +350,7 @@ const Products = () => {
             categoryKey: "wireless"
         },
         {
-            id: 8,
+            id: 26,
             name: "Fortinet FortiExtender 201E",
             categoryId: 7,
             category: "Hardware",
@@ -361,7 +361,7 @@ const Products = () => {
             categoryKey: "wireless"
         },
         {
-            id: 9,
+            id: 27,
             name: "Sophos RED 60",
             categoryId: 7,
             category: "Hardware",
@@ -372,7 +372,7 @@ const Products = () => {
             categoryKey: "wireless"
         },
         {
-            id: 10,
+            id: 28,
             name: "Cisco Meraki Go GR12",
             categoryId: 7,
             category: "Hardware",
@@ -383,7 +383,7 @@ const Products = () => {
             categoryKey: "wireless"
         },
         {
-            id: 11,
+            id: 29,
             name: "Fortinet FortiAP 321C",
             categoryId: 7,
             category: "Hardware",
@@ -394,7 +394,7 @@ const Products = () => {
             categoryKey: "wireless"
         },
         {
-            id: 12,
+            id: 30,
             name: "Sophos APX 530",
             categoryId: 7,
             category: "Hardware",
@@ -407,16 +407,17 @@ const Products = () => {
 
 
         // Software Products
-        { id: 9, name: "SOC Elite", categoryId: 8, category: "Software", details: "Security Operations Center", brand: "BrandG", photo: soc, prix: "", categoryKey: "soc" },
-        { id: 10, name: "MDR Shield", categoryId: 10, category: "Software", details: "Managed Detection & Response", brand: "BrandH", photo: mdr, prix: "", categoryKey: "mdr" },
-        { id: 11, name: "XDR Defender", categoryId: 10, category: "Software", details: "Extended Detection & Response", brand: "BrandI", photo: xdr, prix: "", categoryKey: "xdr" },
-        { id: 12, name: "EDR Sentinel", categoryId: 11, category: "Software", details: "Endpoint Detection & Response", brand: "BrandJ", photo: edr, prix: "", categoryKey: "edr" },
+        { id: 31, name: "SOC Elite", categoryId: 8, category: "Software", details: "Security Operations Center", brand: "BrandG", photo: soc, prix: "", categoryKey: "soc" },
+        { id: 32, name: "MDR Shield", categoryId: 10, category: "Software", details: "Managed Detection & Response", brand: "BrandH", photo: mdr, prix: "", categoryKey: "mdr" },
+        { id: 33, name: "XDR Defender", categoryId: 10, category: "Software", details: "Extended Detection & Response", brand: "BrandI", photo: xdr, prix: "", categoryKey: "xdr" },
+        { id: 34, name: "EDR Sentinel", categoryId: 11, category: "Software", details: "Endpoint Detection & Response", brand: "BrandJ", photo: edr, prix: "", categoryKey: "edr" },
 
     ];
 
-    const filteredProducts = productsData.filter(product =>
-        activeCategory === 'all' || product.categoryKey === activeCategory
-    );
+    const filteredProducts = activeCategory === 'all'
+        ? productsData
+        : productsData.filter(p => p.categoryKey === activeCategory);
+
 
     const handleCategoryClick = (item) => {
         setActiveCategory(categoryMap[item] || 'all');
@@ -505,6 +506,9 @@ const getBadgeColor = (name) => '#1abc9c';
 const getBorderColor = (name) => '#1abc9c';
 
 export default Products;
+
+
+
 
 
 

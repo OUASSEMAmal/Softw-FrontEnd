@@ -19,8 +19,7 @@ const TermsOfService = () => {
                             { icon: "bi bi-check-circle", text: "Vous reconnaissez notre propriété intellectuelle" }
                         ].map((item, index) => (
                             <ListGroup.Item key={index} className="d-flex align-items-center">
-                                {/* eslint-disable-next-line no-template-curly-in-string */}
-                                <i className='{${item.icon} text-primary me-2}'></i>
+                                <i className={`${item.icon} text-primary me-2`}></i>
                                 {item.text}
                             </ListGroup.Item>
                         ))}
@@ -126,9 +125,8 @@ const TermsOfService = () => {
                                                 <h5 className="alert-heading">Avertissement important</h5>
                                                 <p className="mb-0">
                                                     En cas de non-respect de ces conditions, nous nous réservons le droit de restreindre
-                                                    votre accès à nos services. Pour toute question, contactez-nous à
-                                                    <strong>
-                                                        contact@beamtel.ma</strong>.
+                                                    votre accès à nos services. Pour toute question, contactez-nous à{" "}
+                                                    <strong>contact@beamtel.ma</strong>
                                                 </p>
                                             </div>
                                         </div>
@@ -146,10 +144,8 @@ const TermsOfService = () => {
                     </Row>
                 </Container>
             </main>
+            <div> <Footer /> </div>
 
-            <div>
-                <Footer/>
-            </div>
         </div>
     );
 };
