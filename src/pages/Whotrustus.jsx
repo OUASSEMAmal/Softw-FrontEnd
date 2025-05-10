@@ -23,15 +23,15 @@ import {text} from "framer-motion/client";
 const whotData = [
     {
         img: C1,
-        text: "Implémentation de 200 Endpoint Detection Response (EDR)\nConseil sur les pratiques ISO27001"
+        text: "• Implémentation de 200 Endpoint\n  Detection Response (EDR)\n• Conseil sur les pratiques ISO27001"
     },
     {
         img: C2,
-        text: "Implémentation de la solution Firewall XGS de Sophos."
+        text: "• Implémentation de la solution Firewall XGS de Sophos."
     },
     {
         img: C3,
-        text: "Deal Fortinet en cours.\n Implémentation de Fortiweb VM"
+        text: " • Deal Fortinet en cours. Implémentation de Fortiweb VM"
     },
     {
         img: C4,
@@ -43,11 +43,11 @@ const whotData = [
     },
     {
         img: C6,
-        text: "Accompagnement la maitrise du standard\ncyber sécurité pour la 5G En France."
+        text: "• Accompagnement la maitrise du standard\ncyber sécurité pour la 5G En France."
     },
     {
         img: C7,
-        text: "Technical Audit\nWireless capacity and security. \n Implémentation du Firewall XGS de Sophos."
+        text: "• Technical Audit\n• Wireless capacity and security. \n•  Implémentation du Firewall XGS de Sophos."
     },
     {
         img: C8,
@@ -55,7 +55,7 @@ const whotData = [
     },
     {
         img: C9,
-        text: "Contrat 2 ans : 6 Consultants en Transformation digitale.\n Client : Ministère de La Santé au Maroc."
+        text: "• Contrat 2 ans : 6 Consultants en Transformation digitale.\n•  Client : Ministère de La Santé au Maroc."
     },
     {
         img: C10,
@@ -63,7 +63,7 @@ const whotData = [
     },
     {
         img: C11,
-        text: "Partenaire et Sponsor DIAMOND"
+        text: "• Partenaire et Sponsor DIAMOND"
     }
 
 ];
@@ -80,16 +80,16 @@ const Whotrustus = () => {
                         <h2 className="founder-title">MOT DU FONDATEUR</h2>
                         <img src={Tibari} alt="Tibari" className="founder-image" />
                         <p className="founder-quote">
-                            La cybersécurité est devenue une arme, une force et une priorité à avoir
-                            dans différents types d'entreprises. Nous sommes convaincus par les solutions
-                            que nous intégrons et nous sommes partenaires de 2 des 10 premiers fournisseurs
-                            mondiaux du secteur de la cyberdéfense et cybersécurité au monde.
+                            La cybersécurité est devenue une arme, une force et une priorité à avoir dans
+                            différents types d'entreprises. Nous sommes convaincus par les solutions que
+                            nous intégrons et nous sommes partenaires de 2 des 10 premiers fournisseurs
+                            mondiaux du secteur de la cyberdéfense, cybersécurité au monde.
                         </p>
                     </div>
 
                     <div className="trust-container">
                         <h2 className="trust-title">
-                            <FaHandshake className="trust-icon" />Quelques CLIENTS CYBER SÉCURITÉ
+                            <FaHandshake className="trust-icon" />QUELQUES CLIENTS CYBER SÉCURITÉ
                         </h2>
 
                         <div className="whot-grid">
@@ -105,7 +105,7 @@ const Whotrustus = () => {
 
                     <div className="trust-container">
                         <h2 className="trust-title">
-                            <FaHandshake className="trust-icon" />Quelques CLIENTS IT/TELCO
+                            <FaHandshake className="trust-icon" />QUELQUES CLIENTS IT/TELCO
                         </h2>
 
                         <div className="whot-grid">

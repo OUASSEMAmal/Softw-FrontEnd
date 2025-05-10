@@ -15,6 +15,7 @@ import ext2 from "../assets/WHO/ext2.png";
 import Sophos from "../assets/part/Sophos-Logo.png";
 import Fortinet from "../assets/part/Fortinet-Logo.svg";
 import crowdstrike from "../assets/part/crowdstrike-logo.png";
+import kas1 from "../assets/WHO/kas1.png";
 import TrendMicro from "../assets/part/TrendMicro-Logo.png";
 
 const Partners = () => {
@@ -34,26 +35,28 @@ const Partners = () => {
             logo: ext2,
             description: "BEAMTEL partenaire officiel"
         },
+
         {
-            logo: C9,
-            description: "Contrat 2 ans : 6 Consultants en Transformation Staire",
-            client: "Ministère de la Santé au Maroc"
+            logo: kas1,
+            description: " BEAMTEL Intégrateur de solutions Cyber Sécurité de Kaspersky"
         },
+
+
         {
             logo: C10,
             description: "Contrat Cadre : Consultants en Ingénierie / Conseils / M.B.D. Labs"
         },
         {
             logo: C11,
-            description: "Partenariat et Sponsor (RAMOND)"
+            description: "Nous sommes Intégrateur de solutions de connectivités Nokia"
         },
         {
             logo: at,
-            description: "Accueillir des élèves Ingénieurs pour des Projets PFE de 6 Mois"
+            description: "Nous sommes Intégrateur de la 5G privée de Athonet"
         },
         {
             logo: fire,
-            description: "5G Private Networks"
+            description: "Nous sommes Intégrateur des solutions 5G de Firecell"
         },
         {
             logo: fort,
