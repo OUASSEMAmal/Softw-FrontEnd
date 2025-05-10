@@ -5,12 +5,13 @@ import Header from "../../components/home/jsx/header";
 import NavBar from "../../components/home/jsx/navbar";
 import Footer from "../../components/Footer";
 import XGS3100 from "../../assets/Product/hardware/xgs3100.jpg";
-import xgs4300 from "../../assets/Product/hardware/xgs4300.png";
+
 import xgs2100 from "../../assets/Product/hardware/xg2100.jpg";
 import firepower1010 from "../../assets/Product/hardware/firepower1010.jpg";
 import FG40F from "../../assets/Product/hardware/FG-40F.png";
 import mx84 from "../../assets/Product/hardware/mx84.jpg";
 import fortirouter401e from "../../assets/Product/hardware/fortirouter401e.png";
+import FirwellSho from "../../assets/Product/FirewallSho.png";
 import rv340 from "../../assets/Product/hardware/rv340.jpg";
 import red20 from "../../assets/Product/hardware/red20.jpg";
 import fortirouter60d from "../../assets/Product/hardware/fortirouter60d.jpg";
@@ -37,9 +38,10 @@ import apx530 from "../../assets/Product/hardware/apx530.jpg";
 import soc from "../../assets/Product/software/soc.jpg";
 import mdr from "../../assets/Product/software/mdr.png";
 import xdr from "../../assets/Product/software/xdr.png";
-import edr from "../../assets/Product/software/edr.png";
-
-
+import crowdstrike from "../../assets/Product/software/crowdstrike.png";
+import sopedr from "../../assets/Product/software/sopedr.png";
+import foredr from "../../assets/Product/software/foredr.png";
+import edrcic from "../../assets/Product/software/edrcic.png";
 
 const Products = () => {
     const [activeCategory, setActiveCategory] = useState('all');
@@ -85,17 +87,7 @@ const Products = () => {
             prix: "",
             categoryKey: "firewalls"
         },
-        {
-            id: 2,
-            name: "Sophos XGS3100",
-            categoryId: 0,
-            category: "Hardware",
-            details: "Advanced Firewall",
-            brand: "Sophos",
-            photo: xgs4300,
-            prix: "",
-            categoryKey: "firewalls"
-        },
+
         {
             id: 3,
             name: "Sophos XGS2100",
@@ -405,19 +397,89 @@ const Products = () => {
             categoryKey: "wireless"
         },
 
-
         // Software Products
-        { id: 31, name: "SOC Elite", categoryId: 8, category: "Software", details: "Security Operations Center", brand: "BrandG", photo: soc, prix: "", categoryKey: "soc" },
-        { id: 32, name: "MDR Shield", categoryId: 10, category: "Software", details: "Managed Detection & Response", brand: "BrandH", photo: mdr, prix: "", categoryKey: "mdr" },
-        { id: 33, name: "XDR Defender", categoryId: 10, category: "Software", details: "Extended Detection & Response", brand: "BrandI", photo: xdr, prix: "", categoryKey: "xdr" },
-        { id: 34, name: "EDR Sentinel", categoryId: 11, category: "Software", details: "Endpoint Detection & Response", brand: "BrandJ", photo: edr, prix: "", categoryKey: "edr" },
-
+        {
+            id: 31,
+            name: "SOC Elite",
+            categoryId: 8,
+            category: "Software",
+            details: "Security Operations Center",
+            brand: "BrandG",
+            photo: soc,
+            prix: "",
+            categoryKey: "soc"
+        },
+        {
+            id: 32,
+            name: "MDR Shield",
+            categoryId: 10,
+            category: "Software",
+            details: "Managed Detection & Response",
+            brand: "BrandH",
+            photo: mdr,
+            prix: "",
+            categoryKey: "mdr"
+        },
+        {
+            id: 33,
+            name: "XDR Defender",
+            categoryId: 10,
+            category: "Software",
+            details: "Extended Detection & Response",
+            brand: "BrandI",
+            photo: xdr,
+            prix: " ",
+            categoryKey: "xdr"
+        },
+        {
+            id: 34,
+            name: "EDR CrowdStrike",
+            categoryId: 11,
+            category: "Software",
+            details: "Endpoint Detection & Response",
+            brand: "BrandJ",
+            photo: crowdstrike,
+            prix: "",
+            categoryKey: "edr"
+        },
+        {
+            id: 35,
+            name: "Sophos Intercept X for Server",
+            categoryId: 11,
+            category: "Software",
+            details: "Advanced server protection with EDR",
+            brand: "Sophos",
+            photo: sopedr,
+            prix: "",
+            categoryKey: "edr"
+        },
+        {
+            id: 36,
+            name: "Fortinet EDR",
+            categoryId: 11,
+            category: "Software",
+            details: "Endpoint Detection and Response solution",
+            brand: "Fortinet",
+            photo: foredr,
+            prix: "",
+            categoryKey: "edr"
+        },
+        {
+            id: 37,
+            name: "Cisco Secure Endpoint",
+            categoryId: 11,
+            category: "Software",
+            details: "Cloud-native endpoint security platform",
+            brand: "Cisco",
+            photo: edrcic,
+            prix: "",
+            categoryKey: "edr"
+        },
     ];
 
     const filteredProducts = activeCategory === 'all'
         ? productsData
         : productsData.filter(p => p.categoryKey === activeCategory);
-
 
     const handleCategoryClick = (item) => {
         setActiveCategory(categoryMap[item] || 'all');
@@ -429,6 +491,9 @@ const Products = () => {
             <NavBar />
             <div className="products-container">
                 <h1 className="main-header">Categories</h1>
+                <h3 className="mt-1">
+                    Contact <a href="mailto:sales@beamtel.ma" className="email-link">sales@beamtel.ma</a> for price
+                </h3>
 
                 <div className="content-grid">
                     <div className="categories-column">
@@ -475,6 +540,20 @@ const ProductCard = ({ product }) => {
     const badgeColor = getBadgeColor(product.name);
     const borderColor = getBorderColor(product.details);
 
+    // Fonction pour rendre le prix avec email cliquable
+    const renderPriceInfo = () => {
+        if (product.prix && product.prix.includes('@')) {
+            return (
+                <span className="price-info">
+                    Contact <a href={`mailto:sales@beamtel.ma`} className="email-link">
+                        sales@beamtel.ma
+                    </a> for price
+                </span>
+            );
+        }
+        return <span className="price-info">{product.prix || ""}</span>;
+    };
+
     return (
         <div className="product-card" style={{ borderTopColor: borderColor }}>
             {product.photo && (
@@ -493,11 +572,9 @@ const ProductCard = ({ product }) => {
 
             <h3 className="product-name">{product.name}</h3>
 
-            <div className="product-price">Price not available</div>
             <h3 className="product-name">{product.details}</h3>
-            <div className="product-info">
-                <span className="stock-info">{product.brand}</span>
-            </div>
+
+            {renderPriceInfo()}
         </div>
     );
 };
@@ -506,6 +583,8 @@ const getBadgeColor = (name) => '#1abc9c';
 const getBorderColor = (name) => '#1abc9c';
 
 export default Products;
+
+
 
 
 
