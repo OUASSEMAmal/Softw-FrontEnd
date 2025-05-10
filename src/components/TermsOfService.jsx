@@ -147,6 +147,9 @@ const TermsOfService = () => {
                 </Container>
             </main>
 
+            <div>
+                <Footer/>
+            </div>
         </div>
     );
 };

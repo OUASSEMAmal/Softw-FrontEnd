@@ -150,9 +150,11 @@ const PrivacyPolicy = () => {
                     </Row>
                 </Container>
             </main>
-
-
+            <div>
+                <Footer/>
+            </div>
         </div>
+
     );
 };
 
