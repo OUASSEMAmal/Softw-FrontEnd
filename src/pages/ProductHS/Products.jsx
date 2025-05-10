@@ -4,9 +4,9 @@ import './Products.css';
 import Header from "../../components/home/jsx/header";
 import NavBar from "../../components/home/jsx/navbar";
 import Footer from "../../components/Footer";
-import FG60F from "../../assets/Product/hardware/FG-60F.png";
-import mx64 from "../../assets/Product/hardware/mx64.jpg";
-import FG100F from "../../assets/Product/hardware/FG-100F.jpg";
+import XGS3100 from "../../assets/Product/hardware/xgs3100.jpg";
+import xgs4300 from "../../assets/Product/hardware/xgs4300.png";
+import xgs2100 from "../../assets/Product/hardware/xg2100.jpg";
 import firepower1010 from "../../assets/Product/hardware/firepower1010.jpg";
 import FG40F from "../../assets/Product/hardware/FG-40F.png";
 import mx84 from "../../assets/Product/hardware/mx84.jpg";
@@ -44,6 +44,18 @@ import edr from "../../assets/Product/software/edr.png";
 const Products = () => {
     const [activeCategory, setActiveCategory] = useState('all');
 
+    const categoryMap = {
+        'Firewalls': 'firewalls',
+        'Routers': 'routers',
+        'Switches': 'switches',
+        'Access Points': 'access-point',
+        'Wireless Networks': 'wireless',
+        'EDR': 'edr',
+        'XDR': 'xdr',
+        'MDR': 'mdr',
+        'SOC': 'soc'
+    };
+
     const categories = [
         {
             name: "Hardware Products",
@@ -64,27 +76,37 @@ const Products = () => {
         // Hardware Products
         {
             id: 1,
-            name: "Fortinet FortiGate FG-60F",
+            name: "Sophos XGS3100",
             categoryId: 0,
             category: "Hardware",
             details: "Advanced Firewall",
-            brand: "Fortinet",
-            photo: FG60F,
+            brand: "Sophos",
+            photo: XGS3100,
             prix: "",
             categoryKey: "firewalls"
         },
         {
             id: 13,
-            name: "Cisco Meraki MX64",
+            name: "Sophos XGS3100",
             categoryId: 0,
             category: "Hardware",
             details: "Advanced Firewall",
-            brand: "Cisco",
-            photo: mx64,
+            brand: "Sophos",
+            photo: xgs4300,
             prix: "",
             categoryKey: "firewalls"
         },
-
+        {
+            id: 14,
+            name: "Sophos XGS2100",
+            categoryId: 0,
+            category: "Hardware",
+            details: "High-Performance Enterprise Firewall",
+            brand: "Sophos",
+            photo: xgs2100,
+            prix: "",
+            categoryKey: "firewalls"
+        },
         {
             id: 15,
             name: "Cisco Firepower 1010",
@@ -327,7 +349,17 @@ const Products = () => {
             prix: "",
             categoryKey: "wireless"
         },
-
+        {
+            id: 8,
+            name: "Fortinet FortiExtender 201E",
+            categoryId: 7,
+            category: "Hardware",
+            details: "4G LTE Wireless WAN Extender",
+            brand: "Fortinet",
+            photo: fortiextender201e ,
+            prix: "",
+            categoryKey: "wireless"
+        },
         {
             id: 9,
             name: "Sophos RED 60",
@@ -387,19 +419,6 @@ const Products = () => {
     );
 
     const handleCategoryClick = (item) => {
-        const categoryMap = {
-            'Firewalls': 'firewalls',
-            'Routers': 'routers',
-            'Switches': 'switches',
-            'Access Points': 'access-point',
-            'Wireless Networks': 'wireless',
-            'EDR': 'edr',
-            'XDR': 'xdr',
-            'MDR': 'mdr',
-            'SOC': 'soc',
-
-        };
-
         setActiveCategory(categoryMap[item] || 'all');
     };
 
@@ -422,7 +441,7 @@ const Products = () => {
                                     {category.items.map((item, i) => (
                                         <li
                                             key={`item-${index}-${i}`}
-                                            className={`category-item ${activeCategory === item.toLowerCase() ? 'active' : ''}`}
+                                            className={`category-item ${activeCategory === categoryMap[item] ? 'active' : ''}`}
                                             onClick={() => handleCategoryClick(item)}
                                         >
                                             {item}
@@ -486,6 +505,13 @@ const getBadgeColor = (name) => '#1abc9c';
 const getBorderColor = (name) => '#1abc9c';
 
 export default Products;
+
+
+
+
+
+
+
 
 
 

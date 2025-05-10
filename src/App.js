@@ -10,6 +10,8 @@ import Whotrustus from "./pages/Whotrustus";
 import Cybersecurity from "./pages/Cyber/Cybersecurity";
 import ForgotPassword from "./components/Auth/ForgotPassword";
 import References from "./pages/References";
+import TermsOfService from "./components/TermsOfService";
+import PrivacyPolicy from "./components/privacyPolicy";
 
 
 
@@ -28,6 +30,8 @@ function App() {
       <Route path="/SignUp" element={<SignUp />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
 
+      <Route path="/privacy" element={<PrivacyPolicy />} />
+      <Route path="/terms" element={<TermsOfService />} />
 
 
 

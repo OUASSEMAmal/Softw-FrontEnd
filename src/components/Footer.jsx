@@ -15,7 +15,7 @@ const Footer = ({style }) => {
             <ul className="d-flex justify-content-around align-items-center list-unstyled p-0">
               <li><a href="/privacy"><b>Privacy Policy</b></a></li>
               <li><a href="/terms"><b>Terms of Service</b></a></li>
-              <li><a href="/contact-us"><b>Contact us</b></a></li>
+              <li><a href="/career"><b>Contact us</b></a></li>
             </ul>
             <div className="container">
               <p className="text-center small ">© 2025 BEAMTEL. All rights reserved.</p>

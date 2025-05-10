@@ -78,7 +78,7 @@ const Whotrustus = () => {
                 <div className="founder-section">
                     <div className="founder-content">
                         <h2 className="founder-title">MOT DU FONDATEUR</h2>
-                        <img src={Tibari} alt="Tibari" className="founder-image" />
+
                         <p className="founder-quote">
                             La cybersécurité est devenue une arme, une force et une priorité à avoir dans
                             différents types d'entreprises. Nous sommes convaincus par les solutions que
