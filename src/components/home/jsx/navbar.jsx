@@ -17,13 +17,11 @@ const Navbar = () => {
                             <li><Link to="/">Home</Link></li>
                             <li><Link to="/Products">Products</Link></li>
                             <li><Link to="/partners">Partners</Link></li>
-                           <li>
-                                <Link to="/references">References</Link>
-                            </li>
+
                             <li><Link to ="/Whotrustus">Who trust us ?</Link></li>
 
                             <li><Link to ="/career">Contact us</Link></li>
-                            <li><button id="btn1" style={{ marginLeft: 500}}><Link to="/login"><b>Login</b></Link></button></li>
+                            <li><button id="btn1" style={{ marginLeft: 630}}><Link to="/login"><b>Login</b></Link></button></li>
                             <li><button id="btn2"><Link to="/SignUp"><b>Signup</b></Link></button></li>
                         </ul>
                     </nav>

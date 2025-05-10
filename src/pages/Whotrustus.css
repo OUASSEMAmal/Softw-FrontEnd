@@ -1,151 +1,123 @@
-.trust-page {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #333;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
+/* Section principale */
 .trust-section {
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-    margin-top: 40px;
+    background-color: #f5f6fa;
+    padding: 60px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
 }
 
+/* === Bloc du fondateur === */
 .founder-section {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
+    max-width: 1200px;
+    margin: auto;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .founder-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     text-align: center;
+    margin-bottom: 60px;
 }
 
 .founder-title {
+    margin-left: 420px;
     font-size: 2rem;
+    font-weight: 700;
     color: #2c3e50;
-    margin-bottom: 30px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    margin-bottom: 20px;
 }
 
 .founder-image {
-    width: 200px;
-    height: 200px;
-    border-radius: 10%;
-    object-fit: cover;
-    border: 5px solid #ffffff;
-    margin-bottom: 30px;
-}
+    width: 160px;
+    height: auto;
+    border-radius: 50%;
+    margin: 20px 0;
 
-.founder-message {
-    max-width: 800px;
-    margin: 0 auto;
 }
-
 
 .founder-quote {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    color: #2c3e50;
-    margin-bottom: 30px;
-    text-align: center;
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: auto;
+    line-height: 1.7;
+    color: #555;
 }
 
-.founder-signature {
-    margin-top: 40px;
-}
-
-.founder-name {
-    font-weight: bold;
-    font-size: 1.3rem;
-    margin-bottom: 5px;
-}
-
-.founder-position {
-    font-style: italic;
-    color: #7397bc;
-}
-
+/* === Conteneur de confiance === */
 .trust-container {
     margin-top: 60px;
-    text-align: center;
 }
 
 .trust-title {
     font-size: 1.8rem;
-    color: #2c3e50;
-    margin-bottom: 30px;
+    text-align: center;
+    color: #192a56;
+    margin-bottom: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 15px;
+    gap: 10px;
 }
 
 .trust-icon {
-    color: #7397bc;
+    color: #00a8ff;
+    font-size: 1.5rem;
 }
 
-.trust-partners-image1 {
-    max-width: 100%;
+/* === Grille des cartes === */
+.whot-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 0 20px;
+}
+
+/* === Carte de client === */
+.whot-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 240px;
+}
+
+.whot-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.1);
+}
+
+/* === Logo du client === */
+.whot-logo {
+    width: 90px;
     height: auto;
-    margin-right: 50px;
-    border-radius: 10px;
-
-
+    margin-bottom: 15px;
+    object-fit: contain;
 }
 
-/* Responsive Design */
+/* === Texte du client === */
+.whot-text {
+    font-size: 0.95rem;
+    text-align: left;
+    color: #333;
+    white-space: pre-line; /* Permet le respect des \n */
+    width: 100%;
+}
+
+/* === Responsive === */
 @media (max-width: 768px) {
-    .founder-title {
+    .founder-title,
+    .trust-title {
         font-size: 1.5rem;
     }
 
     .founder-quote {
         font-size: 1rem;
-        padding: 0 15px;
+        padding: 0 10px;
     }
 
-    .founder-image {
-        width: 150px;
-        height: 150px;
-    }
-
-    .trust-title {
-        font-size: 1.4rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .founder-title {
-        font-size: 1.3rem;
-    }
-
-    .founder-name {
-        font-size: 1.1rem;
-    }
-
-    .trust-title {
-        flex-direction: column;
-        gap: 8px;
+    .whot-text {
+        font-size: 0.9rem;
     }
 }

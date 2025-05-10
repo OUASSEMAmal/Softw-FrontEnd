@@ -89,13 +89,14 @@ const Career = () => {
                         <div className="form-group">
                             <label>Are you looking for what kind of collaboration:</label>
                             <input
-                                type="email"
-                                id="collaborationType"
-                                name="collaborationType"
+                                type="text"
+                                id="text"
+                                name="text"
                                 value={formData.collaborationType}
                                 onChange={handleChange}
                                 required
                             />
+
 
                         </div>
 

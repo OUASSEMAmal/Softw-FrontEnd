@@ -20,7 +20,7 @@ import C11 from "../assets/WHO/C11.png";
 import "./Whotrustus.css";
 import {text} from "framer-motion/client";
 
-const partnerData = [
+const whotData = [
     {
         img: C1,
         text: "Implémentation de 200 Endpoint Detection Response (EDR)\nConseil sur les pratiques ISO27001"
@@ -92,11 +92,11 @@ const Whotrustus = () => {
                             <FaHandshake className="trust-icon" />Quelques CLIENTS CYBER SÉCURITÉ
                         </h2>
 
-                        <div className="partners-grid">
-                            {partnerData.slice(0, 8).map((partner, index) => (
-                                <div key={index} className="partner-card">
-                                    <img src={partner.img} alt={`C${index + 1}`} className="partner-logo" />
-                                    <p className="partner-text">{partner.text}</p>
+                        <div className="whot-grid">
+                            {whotData.slice(0, 8).map((whot, index) => (
+                                <div key={index} className="whot-card">
+                                    <img src={whot.img} alt={`C${index + 1}`} className="whot-logo" />
+                                    <p className="whot-text">{whot.text}</p>
                                 </div>
                             ))}
                         </div>
@@ -108,11 +108,11 @@ const Whotrustus = () => {
                             <FaHandshake className="trust-icon" />Quelques CLIENTS IT/TELCO
                         </h2>
 
-                        <div className="partners-grid">
-                            {partnerData.slice(7, 11).map((partner, index) => (
-                                <div key={index} className="partner-card">
-                                    <img src={partner.img} alt={`C${index + 9}`} className="partner-logo" />
-                                    <p className="partner-text">{partner.text}</p>
+                        <div className="whot-grid">
+                            {whotData.slice(7, 11).map((whot, index) => (
+                                <div key={index} className="whot-card">
+                                    <img src={whot.img} alt={`C${index + 9}`} className="whot-logo" />
+                                    <p className="whot-text">{whot.text}</p>
                                 </div>
                             ))}
                         </div>
