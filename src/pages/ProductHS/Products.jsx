@@ -5,13 +5,11 @@ import Header from "../../components/home/jsx/header";
 import NavBar from "../../components/home/jsx/navbar";
 import Footer from "../../components/Footer";
 import XGS3100 from "../../assets/Product/hardware/xgs3100.jpg";
-
 import xgs2100 from "../../assets/Product/hardware/xg2100.jpg";
 import firepower1010 from "../../assets/Product/hardware/firepower1010.jpg";
 import FG40F from "../../assets/Product/hardware/FG-40F.png";
 import mx84 from "../../assets/Product/hardware/mx84.jpg";
 import fortirouter401e from "../../assets/Product/hardware/fortirouter401e.png";
-import FirwellSho from "../../assets/Product/FirewallSho.png";
 import rv340 from "../../assets/Product/hardware/rv340.jpg";
 import red20 from "../../assets/Product/hardware/red20.jpg";
 import fortirouter60d from "../../assets/Product/hardware/fortirouter60d.jpg";
@@ -42,6 +40,14 @@ import crowdstrike from "../../assets/Product/software/crowdstrike.png";
 import sopedr from "../../assets/Product/software/sopedr.png";
 import foredr from "../../assets/Product/software/foredr.png";
 import edrcic from "../../assets/Product/software/edrcic.png";
+import fortiSOC from "../../assets/Product/software/fortiSOC.png";
+import Cxdr from "../../assets/Product/software/Cxdr.png";
+import ciscoxdr from "../../assets/Product/software/ciscoxdr .png";
+import FortiMdr from "../../assets/Product/software/FortiMdr.png";
+import mdrFL from "../../assets/Product/software/mdrFL.png";
+import trendXDR from "../../assets/Product/software/trendXDR.png";
+import crowSOC from "../../assets/Product/software/crowSOC.png";
+
 
 const Products = () => {
     const [activeCategory, setActiveCategory] = useState('all');
@@ -73,7 +79,6 @@ const Products = () => {
         }
     ];
 
-    // Liste étendue de produits avec images
     const productsData = [
         // Hardware Products
         {
@@ -87,7 +92,6 @@ const Products = () => {
             prix: "",
             categoryKey: "firewalls"
         },
-
         {
             id: 3,
             name: "Sophos XGS2100",
@@ -410,6 +414,54 @@ const Products = () => {
             categoryKey: "soc"
         },
         {
+            id: 38,
+            name: "FortiAnalyzer-FortiSOC",
+            categoryId: 8,
+            category: "Software",
+            details: "AI-powered Analytics and Automation",
+            brand: "Fortinet",
+            photo: fortiSOC,
+            prix: "",
+            categoryKey: "soc"
+        },
+
+        {
+            id: 44,
+            name: "CrowdStrike Cybersecurity 101",
+            categoryId: 8,
+            category: "Software",
+            details: "Security Operations Center (SOC) Solution",
+            brand: "CrowdStrike",
+            photo: crowSOC,
+            prix: " ",
+            categoryKey: "soc"
+        },
+
+        {
+            id: 41,
+            name: "FortiMDR",
+            categoryId: 10,
+            category: "Software",
+            details: "Managed Detection and Response",
+            brand: "Fortinet",
+            photo: FortiMdr,
+            prix: "",
+            categoryKey: "mdr"
+        },
+
+        {
+            id: 42,
+            name: " CrowdStrikeMDR",
+            categoryId: 10,
+            category: "Software",
+            details: "Managed Detection and Response (Falcon Complete Next-Gen MDR)",
+            brand: "CrowdStrike",
+            photo: mdrFL,
+            prix: "",
+            categoryKey: "mdr"
+        },
+
+        {
             id: 32,
             name: "MDR Shield",
             categoryId: 10,
@@ -429,6 +481,41 @@ const Products = () => {
             brand: "BrandI",
             photo: xdr,
             prix: " ",
+            categoryKey: "xdr"
+        },
+
+        {
+            id: 43,
+            name: "Trend Micro Vision One™",
+            categoryId: 10,
+            category: "Software",
+            details: "Extended Detection & Response (XDR) Security Platform",
+            brand: "Trend Micro",
+            photo: trendXDR,
+            prix: " ",
+            categoryKey: "xdr"
+        },
+
+        {
+            id: 39,
+            name: "Falcon XDR",
+            categoryId: 10,
+            category: "Software",
+            details: "CrowdXDR Alliance",
+            brand: "CrowdStrike",
+            photo: Cxdr,
+            prix: "",
+            categoryKey: "xdr"
+        },
+        {
+            id: 40,
+            name: "Cisco XDR",
+            categoryId: 10,
+            category: "Software",
+            details: "Extended Detection and Response",
+            brand: "Cisco",
+            photo: ciscoxdr,
+            prix: "",
             categoryKey: "xdr"
         },
         {
@@ -474,7 +561,7 @@ const Products = () => {
             photo: edrcic,
             prix: "",
             categoryKey: "edr"
-        },
+        }
     ];
 
     const filteredProducts = activeCategory === 'all'
@@ -540,7 +627,6 @@ const ProductCard = ({ product }) => {
     const badgeColor = getBadgeColor(product.name);
     const borderColor = getBorderColor(product.details);
 
-    // Fonction pour rendre le prix avec email cliquable
     const renderPriceInfo = () => {
         if (product.prix && product.prix.includes('@')) {
             return (
