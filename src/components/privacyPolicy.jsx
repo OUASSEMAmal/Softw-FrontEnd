@@ -36,6 +36,7 @@ const PrivacyPolicy = () => {
             content: (
                 <>
                     <p>Les données personnelles sont utilisées pour :</p>
+               <div className="personal-data-section">
                     <ListGroup variant="flush">
                         {[
                             "Fournir et personnaliser nos services",
@@ -50,6 +51,7 @@ const PrivacyPolicy = () => {
                             </ListGroup.Item>
                         ))}
                     </ListGroup>
+                </div>
                 </>
             )
         },
@@ -99,7 +101,7 @@ const PrivacyPolicy = () => {
                                 <Card.Body className="p-4 p-md-5">
                                     <div className="text-center mb-5">
                                         <p className="lead text-muted">
-                                            Chez <strong className="text-primary">SOFTWARETICH.ma</strong>, nous accordons une grande importance
+                                            Chez <strong className="text-primary">SOFTWARETICH.com</strong>, nous accordons une grande importance
                                             à la protection de vos données personnelles.
                                         </p>
                                     </div>

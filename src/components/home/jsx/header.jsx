@@ -13,7 +13,7 @@ const header = () => {
         </div>
         <nav className="nav">
             <ul>
-                <li><i className="bi bi-geo-alt" style={{ color: 'black' }}> </i> <a href="#references"> 10 rue ghandi, Rabat</a></li>
+                <li><i className="bi bi-geo-alt" style={{ color: 'black' }}> </i> <a href="#references"> Rue Dakar, IMM5, APP01, Rabat</a></li>
                 <li><i className="bi bi-envelope" style={{ color: 'black' }}> </i> <a href="mailto:contact@softwaretich.ma">contact@softwaretich.ma</a></li> {/* Ajout de l'email */}
                 <li><i className="bi bi-telephone" style={{ color: 'black' }}> </i> <a href="#partners" style={{ marginRight: 50 }}> Contact</a></li>
                 <li><a href="https://www.instagram.com/softwaretich?igsh=MW45ajc1azNwZWwwaQ=="><i className="bi bi-instagram" style={{ color: 'black' }}> </i></a></li>

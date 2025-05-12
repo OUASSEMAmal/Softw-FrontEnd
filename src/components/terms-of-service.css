@@ -25,3 +25,12 @@
     background-color: #fff3cd;
     border-color: #ffeeba;
 }
+
+/* Paiements et facturation section */
+
+
+.payment-section .bi {
+    font-size: 1.2rem;
+    margin-left: 100px;
+    color: #0d6efd; /* couleur primaire Bootstrap */
+}

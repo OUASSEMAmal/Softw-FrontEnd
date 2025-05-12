@@ -9,7 +9,7 @@ const ContactCard= () => {
             <div className="contact-info">
                 <div className="contact-item">
                     <FiMapPin className="contact-icon" />
-                    <span>10 rue ghandi, Rabat</span>
+                    <span>Rue Dakar, IMM5, APP01, Rabat</span>
                 </div>
 
                 <div className="contact-item">

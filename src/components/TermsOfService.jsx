@@ -11,7 +11,7 @@ const TermsOfService = () => {
             title: "Acceptation des conditions",
             content: (
                 <>
-                    <p>En utilisant notre site web SOFTWARETICH.ma, vous acceptez pleinement et sans réserve les présentes conditions d'utilisation.</p>
+                    <p>En utilisant notre site web SOFTWARETICH.com, vous acceptez pleinement et sans réserve les présentes conditions d'utilisation.</p>
                     <ListGroup variant="flush" className="small">
                         {[
                             { icon: "bi bi-check-circle", text: "Vous devez avoir au moins 18 ans" },
@@ -33,7 +33,7 @@ const TermsOfService = () => {
         },
         {
             title: "Propriété intellectuelle",
-            content: "Tous les contenus, logos, designs et autres éléments visuels de SOFTWARETICH.ma sont notre propriété exclusive ou celle de nos concédants de licence. Toute reproduction sans autorisation écrite est strictement interdite."
+            content: "Tous les contenus, logos, designs et autres éléments visuels de SOFTWARETICH.com sont notre propriété exclusive ou celle de nos concédants de licence. Toute reproduction sans autorisation écrite est strictement interdite."
         },
         {
             title: "Limitations de responsabilité",
@@ -43,19 +43,22 @@ const TermsOfService = () => {
             title: "Paiements et facturation",
             content: (
                 <>
-                    <p>Les services payants sont soumis aux conditions suivantes :</p>
-                    <ListGroup variant="flush">
-                        {[
-                            "Paiement requis à la commande",
-                            "Pas de remboursement après livraison du service",
-                            "Factures disponibles dans votre espace client"
-                        ].map((item, index) => (
-                            <ListGroup.Item key={index} className="d-flex">
-                                <i className="bi bi-credit-card text-primary me-2 mt-1"></i>
-                                {item}
-                            </ListGroup.Item>
-                        ))}
-                    </ListGroup>
+                    <div className="payment-section">
+                        <p>Les services payants sont soumis aux conditions suivantes :</p>
+                        <ListGroup variant="flush">
+                            {[
+                                "Paiement requis à la commande",
+                                "Pas de remboursement après livraison du service",
+                                "Factures disponibles dans votre espace client"
+                            ].map((item, index) => (
+                                <ListGroup.Item key={index} className="d-flex">
+                                    <i className="bi bi-credit-card text-primary me-2 mt-1"></i>
+                                    {item}
+                                </ListGroup.Item>
+                            ))}
+                        </ListGroup>
+                    </div>
+
                 </>
             )
         },
@@ -93,7 +96,7 @@ const TermsOfService = () => {
                                 <Card.Body className="p-4 p-md-5">
                                     <div className="text-center mb-5">
                                         <p className="lead text-muted">
-                                            Les présentes conditions régissent l'utilisation du site <strong className="text-primary">SOFTWARETICH.ma</strong>.
+                                            Les présentes conditions régissent l'utilisation du site <strong className="text-primary">SOFTWARETICH.com</strong>.
                                             Veuillez les lire attentivement avant d'utiliser nos services.
                                         </p>
                                     </div>
