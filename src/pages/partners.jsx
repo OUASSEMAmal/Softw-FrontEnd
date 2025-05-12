@@ -29,16 +29,16 @@ const Partners = () => {
     const referenceItems = [
         {
             logo: soo,
-            description: "BEAMTEL intégrateur de solutions Cyber Sécurité de SOPHOS"
+            description: "SOFTWARETICH intégrateur de solutions Cyber Sécurité de SOPHOS"
         },
         {
             logo: ext2,
-            description: "BEAMTEL partenaire officiel"
+            description: "SOFTWARETICH partenaire officiel"
         },
 
         {
             logo: kas1,
-            description: " BEAMTEL Intégrateur de solutions Cyber Sécurité de Kaspersky"
+            description: " SOFTWARETICH Intégrateur de solutions Cyber Sécurité de Kaspersky"
         },
 
 
