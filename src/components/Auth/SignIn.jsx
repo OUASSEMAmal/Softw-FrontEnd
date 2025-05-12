@@ -23,7 +23,7 @@ const SignIn = () => {
 
     try {
       // Envoi de la requête de connexion au backend
-      const response = await axios.post('http://localhost:8081/api/auth/signin', {
+      const response = await axios.post('http://localhost:8079/api/auth/signin', {
         email: email,
         password: password
       });
@@ -32,7 +32,7 @@ const SignIn = () => {
       const token = response.data.token; // ou accessToken selon ton backend
       localStorage.setItem('token', token); // tu peux adapter à sessionStorage si besoin
 
-      console.log('Connexion réussie ✅');
+      console.log('Connexion réussie ');
       navigate('/');
 
       // Remplace par la route vers ton dashboard ou page suivante

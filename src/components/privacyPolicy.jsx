@@ -71,7 +71,7 @@ const PrivacyPolicy = () => {
         },
         {
             title: "Droits des utilisateurs",
-            content: "Vous avez le droit d'accéder, de corriger, de supprimer ou de restreindre l'utilisation de vos données personnelles. Pour exercer ces droits, contactez-nous à l'adresse suivante : contact@beamtel.ma."
+            content: "Vous avez le droit d'accéder, de corriger, de supprimer ou de restreindre l'utilisation de vos données personnelles. Pour exercer ces droits, contactez-nous à l'adresse suivante : contact@softwaretich.ma."
         },
         {
             title: "Modifications de la politique",
@@ -99,7 +99,7 @@ const PrivacyPolicy = () => {
                                 <Card.Body className="p-4 p-md-5">
                                     <div className="text-center mb-5">
                                         <p className="lead text-muted">
-                                            Chez <strong className="text-primary">BEAMTEL.ma</strong>, nous accordons une grande importance
+                                            Chez <strong className="text-primary">SOFTWARETICH.ma</strong>, nous accordons une grande importance
                                             à la protection de vos données personnelles.
                                         </p>
                                     </div>
@@ -132,7 +132,7 @@ const PrivacyPolicy = () => {
                                                 <p className="mb-0">
                                                     Pour toute question concernant notre politique de confidentialité,
                                                     contactez notre délégué à la protection des données à l'adresse
-                                                    <strong> contact@beamtel.ma</strong>.
+                                                    <strong> contact@softwaretich.ma</strong>.
                                                 </p>
                                             </div>
                                         </div>

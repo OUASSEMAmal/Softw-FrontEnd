@@ -36,9 +36,9 @@ const HomePage = () => {
             With our in-depth expertise, we develop robust strategies to secure 5G networks and
             provide advanced protection against emerging threats.
           </p>
-          <h2>Why Choose BEAMTEL ?</h2>
+          <h2>Why Choose SOFTWARETICH?</h2>
           <p>
-            BEAMTEL is your trusted cybersecurity partner, protecting critical infrastructures
+              SOFTWARETICH is your trusted cybersecurity partner, protecting critical infrastructures
             and strategic sectors. We anticipate threats and secure networks, including 5G, using
             advanced technologies. Choose expertise to safeguard your digital future.
           </p>

@@ -11,7 +11,7 @@ const TermsOfService = () => {
             title: "Acceptation des conditions",
             content: (
                 <>
-                    <p>En utilisant notre site web BEAMTEL.ma, vous acceptez pleinement et sans réserve les présentes conditions d'utilisation.</p>
+                    <p>En utilisant notre site web SOFTWARETICH.ma, vous acceptez pleinement et sans réserve les présentes conditions d'utilisation.</p>
                     <ListGroup variant="flush" className="small">
                         {[
                             { icon: "bi bi-check-circle", text: "Vous devez avoir au moins 18 ans" },
@@ -33,7 +33,7 @@ const TermsOfService = () => {
         },
         {
             title: "Propriété intellectuelle",
-            content: "Tous les contenus, logos, designs et autres éléments visuels de BEAMTEL.ma sont notre propriété exclusive ou celle de nos concédants de licence. Toute reproduction sans autorisation écrite est strictement interdite."
+            content: "Tous les contenus, logos, designs et autres éléments visuels de SOFTWARETICH.ma sont notre propriété exclusive ou celle de nos concédants de licence. Toute reproduction sans autorisation écrite est strictement interdite."
         },
         {
             title: "Limitations de responsabilité",
@@ -93,7 +93,7 @@ const TermsOfService = () => {
                                 <Card.Body className="p-4 p-md-5">
                                     <div className="text-center mb-5">
                                         <p className="lead text-muted">
-                                            Les présentes conditions régissent l'utilisation du site <strong className="text-primary">BEAMTEL.ma</strong>.
+                                            Les présentes conditions régissent l'utilisation du site <strong className="text-primary">SOFTWARETICH.ma</strong>.
                                             Veuillez les lire attentivement avant d'utiliser nos services.
                                         </p>
                                     </div>
@@ -126,7 +126,7 @@ const TermsOfService = () => {
                                                 <p className="mb-0">
                                                     En cas de non-respect de ces conditions, nous nous réservons le droit de restreindre
                                                     votre accès à nos services. Pour toute question, contactez-nous à{" "}
-                                                    <strong>contact@beamtel.ma</strong>
+                                                    <strong>contact@softwaretich.ma</strong>
                                                 </p>
                                             </div>
                                         </div>

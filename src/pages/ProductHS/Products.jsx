@@ -579,7 +579,7 @@ const Products = () => {
             <div className="products-container">
                 <h1 className="main-header">Categories</h1>
                 <h3 className="mt-1">
-                    Contact <a href="mailto:sales@beamtel.ma" className="email-link">sales@beamtel.ma</a> for price
+                    Contact <a href="mailto:sales@softwaretich.ma" className="email-link">sales@softwaretich.ma</a> for price
                 </h3>
 
                 <div className="content-grid">
@@ -631,8 +631,8 @@ const ProductCard = ({ product }) => {
         if (product.prix && product.prix.includes('@')) {
             return (
                 <span className="price-info">
-                    Contact <a href={`mailto:sales@beamtel.ma`} className="email-link">
-                        sales@beamtel.ma
+                    Contact <a href={`mailto:sales@softwaretich.ma`} className="email-link">
+                        sales@softwaretich.ma
                     </a> for price
                 </span>
             );

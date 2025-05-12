@@ -91,7 +91,7 @@ const Partners = () => {
                     ))}
                 </div>
 
-                <h1>BEAMTEL'S References</h1>
+                <h1>SOFTWARETICH'S References</h1>
                 <div className="Partners-grid1">
                     {referenceItems.map((ref, index) => (
                         <div key={index} className="reference-card">
