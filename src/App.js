@@ -12,9 +12,8 @@ import ForgotPassword from "./components/Auth/ForgotPassword";
 import References from "./pages/References";
 import TermsOfService from "./components/TermsOfService";
 import PrivacyPolicy from "./components/privacyPolicy";
-
-
-
+import Chatbot from "./components/Chatbot";
+import { Box } from '@mui/material';
 
 function App() {
   return (<Router>
@@ -23,7 +22,6 @@ function App() {
       <Route path="/partners" element={<Partners />} />
       <Route path="/career" element={<Career />} />
       <Route path="/Products" element={<Products />} />
-      <Route path="/Cybersecurity" element={<Cybersecurity/>} />
       <Route path="/Whotrustus" element={<Whotrustus/>}/>
 
       <Route path="/login" element={<SignIn />} />
@@ -32,6 +30,7 @@ function App() {
 
       <Route path="/privacy" element={<PrivacyPolicy />} />
       <Route path="/terms" element={<TermsOfService />} />
+
 
 
 

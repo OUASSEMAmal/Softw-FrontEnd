@@ -10,6 +10,7 @@ import ContactCard from "../components/home/jsx/ContactCard";
 import StatsSection from "../components/StatsSection";
 import Footer from "../components/Footer";
 import { Link } from 'react-router-dom';
+import chatboot from '../assets/chatboot.png'
 
 const HomePage = () => {
 
@@ -23,8 +24,10 @@ const HomePage = () => {
       <section
         className="hero-section"
         style={{ backgroundImage: `url(${backgroundImage})` }}
+
       >
       </section>
+
 
       {/* Why Choose SOFTAMERTICH Section */}
       <section className="why-choose-section">
@@ -91,6 +94,7 @@ const HomePage = () => {
       {/* Footer */}
       <Footer style={{ marginTop: -320}} />
     </div>
+
   );
 };
 

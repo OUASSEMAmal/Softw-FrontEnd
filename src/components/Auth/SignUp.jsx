@@ -61,7 +61,8 @@ const SignUp = () => {
 
         e.preventDefault();
         const userData= {
-            username: formData.firstName+' '+formData.lastName,
+            nom: formData.firstName,
+            prenom: formData.lastName,
             email: formData.email,
             password: formData.password,
         }
@@ -82,12 +83,6 @@ const SignUp = () => {
                 await new Promise(resolve => setTimeout(resolve, 1500));
 
                 setSuccessMessage('Inscription réussie! Redirection...');
-                console.log('Données envoyées:', {
-                    firstName: formData.firstName,
-                    lastName: formData.lastName,
-                    email: formData.email
-                });
-
                 // Réinitialisation après succès
                 setTimeout(() => {
                     setFormData({

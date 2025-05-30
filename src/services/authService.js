@@ -1,5 +1,6 @@
 import api from './api';
 
+const apiUrl = process.env.REACT_APP_API_URL;
 
 export const signIn = async (credentials) => {
   try {
@@ -23,7 +24,7 @@ export const signIn = async (credentials) => {
 // src/services/authService.js
 export const signup = async (userData) => {
   try {
-    const response = await fetch('http://localhost:8079/api/auth/signup', {
+    const response = await fetch(`${apiUrl}/auth/signup`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

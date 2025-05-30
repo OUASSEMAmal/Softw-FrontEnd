@@ -1,4 +1,551 @@
-import React, { useState } from 'react';
+
+import React, { useState, useEffect } from 'react';
+import { FaShieldAlt, FaServer } from 'react-icons/fa';
+import Header from "../../components/home/jsx/header";
+import NavBar from "../../components/home/jsx/navbar";
+import Footer from "../../components/Footer";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './Products.css';
+
+const Products = () => {
+    const [products, setProducts] = useState([]);
+    const [filteredProducts, setFilteredProducts] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [selectedCategory, setSelectedCategory] = useState(null);
+
+    const categories = [
+        {
+            name: "Hardware Products",
+            icon: <FaServer />,
+            items: [
+                { name: "FIREWALL", displayName: "Firewall", categoryId: 0 },
+                { name: "ROUTER", displayName: "Router", categoryId: 4 },
+                { name: "SWITCH", displayName: "Switch", categoryId: 3 },
+                { name: "ACCESS_POINT", displayName: "Access Point", categoryId: 2 },
+                { name: "WIRELESS NETWORKS", displayName: "Wireless Networks", categoryId:9}
+            ],
+            key: "hardware"
+        },
+        {
+            name: "Software Solutions",
+            icon: <FaShieldAlt />,
+            items: [
+                { name: "EDR", displayName: "EDR", categoryId: 5 },
+                { name: "XDR", displayName: "XDR", categoryId: 6 },
+                { name: "MDR", displayName: "MDR", categoryId: 7 },
+                { name: "SOC", displayName: "SOC", categoryId: 8 }
+            ],
+            key: "software"
+        }
+    ];
+
+    // Fetch all products on component mount
+    useEffect(() => {
+        fetchProducts();
+    }, []);
+
+    // Filter products when selectedCategory changes
+    useEffect(() => {
+        if (selectedCategory === null) {
+            setFilteredProducts(products);
+        } else {
+            const filtered = products.filter(product => product.categoryId === selectedCategory);
+            console.log(products);
+            setFilteredProducts(filtered);
+        }
+    }, [selectedCategory, products]);
+
+    const fetchProducts = async () => {
+        setLoading(true);
+        try {
+            const response = await fetch('http://localhost:8079/api/products');
+            if (!response.ok) {
+                throw new Error('Failed to fetch products');
+            }
+            const data = await response.json();
+            setProducts(Array.isArray(data) ? data : []);
+            setFilteredProducts(Array.isArray(data) ? data : []);
+        } catch (error) {
+            console.error('Error fetching products:', error);
+            setProducts([]);
+            setFilteredProducts([]);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    const handleCategoryClick = (item) => {
+        setLoading(true);
+        setSelectedCategory(item.categoryId);
+        // Simulate loading delay for better UX
+        setTimeout(() => {
+            setLoading(false);
+        }, 500);
+    };
+
+    return (
+        <div className="products-page">
+            <Header />
+            <NavBar />
+            <div className="products-container">
+                <h1 className="main-header">Categories</h1>
+                <h3 className="mt-1">
+                    Contact <a href="mailto:sales@softwaretich.ma" className="email-link">sales@softwaretich.ma</a> for price
+                </h3>
+
+                <div className="content-grid">
+                    <div className="categories-column">
+                        {categories.map((category, index) => (
+                            <div key={`cat-${index}`} className="category-section">
+                                <h2 className="category-title">
+                                    {category.icon}
+                                    {category.name}
+                                </h2>
+                                <ul className="category-list">
+                                    {category.items.map((item, i) => (
+                                        <li
+                                            key={`item-${index}-${i}`}
+                                            className={`category-item ${
+                                                selectedCategory === item.categoryId ? 'active' : ''
+                                            }`}
+                                            onClick={() => handleCategoryClick(item)}
+                                        >
+                                            {item.displayName}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        ))}
+                    </div>
+
+                    <div className="products-column">
+                        {loading ? (
+                            <div className="loading-message">Loading products...</div>
+                        ) : filteredProducts.length === 0 ? (
+                            <div className="no-products-message">No products found in this category</div>
+                        ) : (
+                            <div className="products-grid">
+                                {filteredProducts.map((product, index) => (
+                                    <ProductCard key={`prod-${index}`} product={product} index={index} />
+                                ))}
+                            </div>
+                        )}
+                    </div>
+                </div>
+            </div>
+            <Footer style={{ marginTop: 200 }} />
+        </div>
+    );
+};
+
+const ProductCard = ({ product, index }) => {
+    const badgeColor = getBadgeColor(product.type);
+    const borderColor = getBorderColor(product.type);
+
+    return (
+        <div className="product-card" style={{ borderTopColor: borderColor }}>
+            {product.photo ? (
+                <div className="product-image-container">
+                    <img
+                        src={`data:image/jpeg;base64,${product.photo}`}
+                        alt={product.nom}
+                        className="product-image"
+                        style={{ height: '200px', objectFit: 'contain', background: '#f9f9f9' }}
+                    />
+                </div>
+            ) : (
+                <div className="product-image-container">
+                    <div
+                        className="product-image-placeholder"
+                        style={{ height: '200px' }}
+                    >
+                        <span className="text-muted">No image</span>
+                    </div>
+                </div>
+            )}
+
+            <div className="product-badge" style={{ backgroundColor: badgeColor }}>
+                {index % 4 === 0 ? product.nom :
+                    index % 4 === 1 ? product.nom :
+                        index % 4 === 2 ? product.nom :
+                            product.nom}
+            </div>
+
+            <p className="product-details">{product.details }</p>
+
+            <div className="product-info">
+                <span className="brand-model">{product.brand } - {product.model_name }</span>
+                {product.special_feat && <span className="special-feat">Feature: {product.special_feat}</span>}
+                {product.antenna_type && <span className="antenna-type">Antenna: {product.antenna_type}</span>}
+            </div>
+        </div>
+    );
+};
+
+const getBadgeColor = (type) => {
+    if (!type) return '#1abc9c';
+    return type.includes('HARDWARE') ? '#2ecc71' : '#3498db';
+};
+
+const getBorderColor = (type) => {
+    if (!type) return '#1abc9c';
+    return type.includes('SOFTWARE') ? '#27ae60' : '#2980b9';
+};
+
+export default Products;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+import React, { useEffect, useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+const Products= () => {
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:8079/api/products')
+            .then((res) => res.json())
+            .then((data) => setProducts(data))
+            .catch((err) => console.error(err));
+    }, []);
+
+    return (
+        <div className="container py-5">
+            <h2 className="mb-4 fw-bold">All Products</h2>
+            <div className="row g-4">
+                {products.map((product, index) => (
+                    <div className="col-md-6 col-lg-4" key={index}>
+                        <div className="card shadow-sm position-relative border-0 h-100">
+
+                            {/!* Top Badge *!/}
+                            <span className={`position-absolute top-0 end-0 badge m-2 text-white ${
+                                index % 4 === 0 ? 'bg-primary' :
+                                    index % 4 === 1 ? 'bg-success' :
+                                        index % 4 === 2 ? 'bg-info' : 'bg-danger'
+                            }`}>
+                {index % 4 === 0 ? 'Recommended' :
+                    index % 4 === 1 ? 'Free delivery' :
+                        index % 4 === 2 ? 'Sophos-Router' : '-30%'}
+              </span>
+
+                            {/!* Product Image *!/}
+                            {product.photo ? (
+                                <img
+                                    src={`data:image/jpeg;base64,${product.photo}`}
+                                    alt={product.nom}
+                                    className="card-img-top"
+                                    style={{ height: '200px', objectFit: 'contain', background: '#f9f9f9' }}
+                                />
+                            ) : (
+                                <div
+                                    className="card-img-top d-flex align-items-center justify-content-center bg-light"
+                                    style={{ height: '200px' }}
+                                >
+                                    <span className="text-muted">No image</span>
+                                </div>
+                            )}
+
+                            <div className="card-body d-flex flex-column">
+                                <h5 className="card-title fw-semibold">{product.nom}</h5>
+                                <h6 className="text-danger fw-bold">{(product.price || 0).toLocaleString()} MAD</h6>
+
+                                <ul className="list-unstyled small mt-3">
+                                    <li><strong>Details:</strong> {product.details || '—'}</li>
+                                    <li><strong>Partner:</strong> {product.partner || '—'}</li>
+                                    <li><strong>Category ID:</strong> {product.categoryId}</li>
+                                    <li><strong>Brand:</strong> {product.brand || '—'}</li>
+                                    <li><strong>Model:</strong> {product.model_name || '—'}</li>
+                                    <li><strong>Feature:</strong> {product.special_feat || '—'}</li>
+                                    <li><strong>Antenna:</strong> {product.antenna_type || '—'}</li>
+                                </ul>
+
+                                <div className="mt-auto d-flex justify-content-between align-items-center small text-muted">
+                                    <span className="text-success">+{(Math.random() * 2).toFixed(2)}%</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+    );
+};
+
+
+export default Products;*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*import React, { useState, useEffect } from 'react';
+import { FaShieldAlt, FaServer } from 'react-icons/fa';
+import './Products.css';
+import Header from "../../components/home/jsx/header";
+import NavBar from "../../components/home/jsx/navbar";
+import Footer from "../../components/Footer";
+import {getAllProducts} from "../../services/productService";
+
+const Products = () => {
+    const [activeFilter, setActiveFilter] = useState({ type: 'all', categoryId: null });
+    const [productsData, setProductsData] = useState([]);
+    const [filteredProducts, setFilteredProducts] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    // Catégories avec leurs IDs correspondants
+    const categories = [
+        {
+            name: "Hardware Products",
+            icon: <FaServer />,
+            items: [
+                { name: "FIREWALL", displayName: "Firewall", categoryId: 0 },
+                { name: "ROUTER", displayName: "Router", categoryId: 4 },
+                { name: "SWITCH", displayName: "Switch", categoryId: 3 },
+                { name: "ACCESS_POINT", displayName: "Access Point", categoryId: 2 }
+            ],
+            key: "hardware"
+        },
+        {
+            name: "Software Solutions",
+            icon: <FaShieldAlt />,
+            items: [
+                { name: "EDR", displayName: "EDR", categoryId: 5 },
+                { name: "XDR", displayName: "XDR", categoryId: 6 },
+                { name: "MDR", displayName: "MDR", categoryId: 7 },
+                { name: "SOC", displayName: "SOC", categoryId: 8 }
+            ],
+            key: "software"
+        }
+    ];
+
+    // Runs only once on mount
+    useEffect(() => {
+        fetchAllProducts();
+    }, []);
+
+    //Runs when productsData or activeFilter changes
+    useEffect(() => {
+        let filtered = [...productsData];
+
+        if (activeFilter.type !== 'all') {
+            filtered = filtered.filter(product =>
+                product.type === activeFilter.type
+            );
+        }
+
+        // Filtrage supplémentaire par categoryId
+        if (activeFilter.categoryId !== null) {
+            filtered = filtered.filter(product =>
+                product.categoryId === activeFilter.categoryId
+            );
+        }
+
+        setFilteredProducts(filtered);
+    }, [productsData, activeFilter]);
+
+
+
+
+    const fetchAllProducts = async () => {
+        setLoading(true);
+        try {
+
+            const data = await getAllProducts();
+            setProductsData(data);
+        } catch (error) {
+            console.error('Fetch error:', error);
+            alert(`Erreur de connexion: ${error.message}`);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+
+
+    const filterProducts = () => {
+
+    };
+
+    const handleCategoryClick = (item) => {
+        setActiveFilter({
+            type: item.name,
+            categoryId: item.categoryId
+        });
+    };
+
+    return (
+        <div className="products-page">
+            <Header />
+            <NavBar />
+            <div className="products-container">
+                <h1 className="main-header">Categories</h1>
+
+                <div className="content-grid">
+                    <div className="categories-column">
+                        {categories.map((category, index) => (
+                            <div key={`cat-${index}`} className="category-section">
+                                <h2 className="category-title">
+                                    {category.icon}
+                                    {category.name}
+                                </h2>
+                                <ul className="category-list">
+                                    {category.items.map((item, i) => (
+                                        <li
+                                            key={`item-${index}-${i}`}
+                                            className={`category-item ${
+                                                activeFilter.type === item.name ? 'active' : ''
+                                            }`}
+                                            onClick={() => handleCategoryClick(item)}
+                                        >
+                                            {item.displayName}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        ))}
+                    </div>
+
+                    <div className="products-column">
+                        {loading ? (
+                            <div className="loading-message">Loading products...</div>
+                        ) : filteredProducts.length === 0 ? (
+                            <div className="no-products-message">No products found in this category</div>
+                        ) : (
+                            <div className="products-grid">
+                                {filteredProducts.map((product) => (
+                                    <ProductCard key={`prod-${product.id}`} product={product} />
+                                ))}
+                            </div>
+                        )}
+                    </div>
+                </div>
+            </div>
+            <Footer style={{ marginTop: 200 }} />
+        </div>
+    );
+};
+
+const ProductCard = ({ product }) => {
+    const badgeColor = getBadgeColor(product.type);
+    const borderColor = getBorderColor(product.type);
+
+    return (
+        <div className="product-card" style={{ borderTopColor: borderColor }}>
+            {product.photo && (
+                <div className="product-image-container">
+                    <img
+                        src={`data:image/jpeg;base64,${arrayBufferToBase64(product.photo)}`}
+                        alt={product.nom}
+                        className="product-image"
+                        onError={(e) => {
+                            e.target.onerror = null;
+                            e.target.src = '/placeholder-product.png';
+                        }}
+                    />
+                </div>
+            )}
+
+            <div className="product-badge" style={{ backgroundColor: badgeColor }}>
+                {product.type.split('_').join(' ')}
+            </div>
+
+            <h3 className="product-name">{product.nom}</h3>
+            <p className="product-details">{product.details}</p>
+            <div className="product-info">
+                <span className="brand-model">{product.brand} - {product.model_name}</span>
+                {product.special_feat && <span className="special-feat">Feature: {product.special_feat}</span>}
+                {product.antenna_type && <span className="antenna-type">Antenna: {product.antenna_type}</span>}
+            </div>
+        </div>
+    );
+};
+
+// Helper pour convertir ArrayBuffer en base64
+const arrayBufferToBase64 = (buffer) => {
+    if (!buffer) return '';
+    let binary = '';
+    const bytes = new Uint8Array(buffer);
+    const len = bytes.byteLength;
+    for (let i = 0; i < len; i++) {
+        binary += String.fromCharCode(bytes[i]);
+    }
+    return window.btoa(binary);
+};
+
+const getBadgeColor = (type) => {
+    if (!type) return '#1abc9c';
+    return type.includes('HARDWARE') ? '#2ecc71' : '#3498db';
+};
+
+const getBorderColor = (type) => {
+    if (!type) return '#1abc9c';
+    return type.includes('SOFTWARE') ? '#27ae60' : '#2980b9';
+};
+
+export default Products;*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*import React, { useState } from 'react';
 import { FaShieldAlt, FaServer, FaWifi, FaBoxOpen, FaTruck, FaFire, FaNetworkWired } from 'react-icons/fa';
 import './Products.css';
 import Header from "../../components/home/jsx/header";
@@ -661,228 +1208,6 @@ const ProductCard = ({ product }) => {
             <h3 className="product-name">{product.details}</h3>
 
             {renderPriceInfo()}
-        </div>
-    );
-};
-
-const getBadgeColor = (name) => '#1abc9c';
-const getBorderColor = (name) => '#1abc9c';
-
-export default Products;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/** import React, { useState, useEffect } from 'react';
-import { FaShieldAlt, FaServer, FaWifi, FaBoxOpen, FaTruck, FaFire, FaNetworkWired } from 'react-icons/fa';
-import './Products.css';
-import Header from "../../components/home/jsx/header";
-import NavBar from "../../components/home/jsx/navbar";
-import Footer from "../../components/Footer";
-
-const Products = () => {
-    const [activeCategory, setActiveCategory] = useState('all');
-    const [productsData, setProductsData] = useState([]);
-    const [filteredProducts, setFilteredProducts] = useState([]);
-    const [loading, setLoading] = useState(true);
-
-    const baseUrl = process.env.REACT_APP_API_URL;
-    const apiUrl = `${baseUrl}/products`;
-
-    const categories = [
-        {
-            name: "Hardware Products",
-            icon: <FaServer />,
-            items: ["Firewalls", "Routers", "Switchs", "Access Point", "Wireless Networks"],
-            key: "hardware"
-        },
-        {
-            name: "Software Solutions",
-            icon: <FaShieldAlt />,
-            items: ["EDR", "XDR", "MDR", "SOC"],
-            key: "software"
-        }
-    ];
-
-    useEffect(() => {
-        fetchAllProducts();
-    }, []);
-
-    useEffect(() => {
-        filterProducts();
-    }, [activeCategory, productsData]);
-
-    const fetchAllProducts = () => {
-        setLoading(true);
-        fetch(apiUrl)
-            .then((response) => response.json())
-            .then((data) => {
-                setProductsData(data);
-                setLoading(false);
-            })
-            .catch((error) => {
-                console.error('Error fetching products:', error);
-                setLoading(false);
-            });
-    };
-
-    const fetchProductsByCategory = (categoryId) => {
-        setLoading(true);
-        fetch(`${baseUrl}/products/category/${categoryId}`)
-            .then((res) => res.json())
-            .then((data) => {
-                setProductsData(data);
-                setLoading(false);
-            })
-            .catch((err) => {
-                console.error(`Error fetching category ${categoryId}:`, err);
-                setLoading(false);
-            });
-    };
-
-    const filterProducts = () => {
-        if (activeCategory === 'all') {
-            setFilteredProducts(productsData);
-            return;
-        }
-
-        const categoryMap = {
-            'firewalls': 0,
-            'routers': 4,
-            'switchs': 5,
-            'access-point': 6,
-            'wireless': 7,
-            'edr': 8,
-            'xdr': 9,
-            'mdr': 10,
-            'soc': 11
-        };
-
-        const categoryId = categoryMap[activeCategory];
-
-        const filtered = productsData.filter(product =>
-            product.categoryId=== categoryId
-        );
-
-        setFilteredProducts(filtered);
-    };
-
-    const handleCategoryClick = (item) => {
-        const categoryMap = {
-            'Firewalls': { key: 'firewalls', categoryId: 0 },
-            'Routers': { key: 'routers', categoryId: 4 },
-            'Switchs': { key: 'switchs', categoryId: 5 },
-            'Access Point': { key: 'access-point', categoryId: 6 },
-            'Wireless Networks': { key: 'wireless', categoryId: 7 },
-            'EDR': { key: 'edr', categoryId: 8 },
-            'XDR': { key: 'xdr', categoryId: 9 },
-            'MDR': { key: 'mdr', categoryId: 10 },
-            'SOC': { key: 'soc', categoryId: 11 }
-        };
-
-        const category = categoryMap[item] || { key: item.toLowerCase(), id: null };
-        setActiveCategory(category.key);
-
-        // Pour filtrer côté serveur au lieu de côté client:
-        // fetchProductsByCategory(category.id);
-    };
-
-    return (
-        <div className="products-page">
-            <Header />
-            <NavBar />
-            <div className="products-container">
-                <h1 className="main-header">Categories</h1>
-
-                <div className="content-grid">
-                    <div className="categories-column">
-                        {categories.map((category, index) => (
-                            <div key={`cat-${index}`} className="category-section">
-                                <h2 className="category-title">
-                                    {category.icon}
-                                    {category.name}
-                                    {category.details}
-                                </h2>
-                                <ul className="category-list">
-                                    {category.items.map((item, i) => (
-                                        <li
-                                            key={`item-${index}-${i}`}
-                                            className={`category-item ${activeCategory === (item.toLowerCase()) ? 'active' : ''}`}
-                                            onClick={() => handleCategoryClick(item)}
-                                        >
-                                            {item}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                        ))}
-                    </div>
-
-                    <div className="products-column">
-                        {loading ? (
-                            <div className="loading-message">Loading products...</div>
-                        ) : filteredProducts.length === 0 ? (
-                            <div className="no-products-message">No products found in this category</div>
-                        ) : (
-                            <div className="products-grid">
-                                {filteredProducts.map((product) => (
-                                    <ProductCard key={`prod-${product.id}`} product={product} />
-                                ))}
-                            </div>
-                        )}
-                    </div>
-                </div>
-            </div>
-            <Footer style={{ marginTop: 200 }} />
-        </div>
-    );
-};
-
-const ProductCard = ({ product }) => {
-    const badgeColor = getBadgeColor(product.name);
-    const borderColor = getBorderColor(product.details);
-
-    return (
-        <div className="product-card" style={{ borderTopColor: borderColor }}>
-            {product.photo && (
-                <div className="product-image-container">
-                    <img
-                        src={`data:image/jpeg;base64,${product.photo}`}
-                        alt={product.name}
-                        className="product-image"
-                    />
-                </div>
-            )}
-
-            <div className="product-badge" style={{ backgroundColor: badgeColor }}>
-                {product.nom}
-            </div>
-
-            <h3 className="product-name">{product.name}</h3>
-
-            <div className="product-price">{product.prix} €</div>
-            <h3 className="product-name">{product.details}</h3>
-            <div className="product-info">
-                <span className="stock-info">{product.brand}</span>
-            </div>
         </div>
     );
 };
